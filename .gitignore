@@ -1,0 +1,8 @@
+registro/*
+!registro/.gitkeep
+__pycache__/
+*.pyc
+logs/
+velho/
+*.codex.log
+guia/assets/*.png

@@ -1,0 +1,9 @@
+[Unit]
+Description=Niveis de autonomia: varre os logs de sessao e atualiza o registro
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c 'python3 -I %h/projetos/niveis-autonomia/medir/autonomia.py varrer --desde $(date -d "-35 days" +%%F) && python3 -I %h/projetos/niveis-autonomia/medir/autonomia.py relatorio --desde $(date -d "-7 days" +%%F) > %h/projetos/niveis-autonomia/registro/ultimo-relatorio.md'
+MemoryMax=3G
+TimeoutStartSec=900
+Nice=10

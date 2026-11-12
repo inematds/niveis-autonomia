@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Níveis de autonomia: meça o que a IA faz sozinha</title>
+<meta name="description" content="Kit para medir quanto do seu trabalho a IA faz sozinha, do nível 0 (consulta) ao 4 (gerencia o processo), no papel ou com registro automático.">
+<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/niveis-autonomia/guia/">
+<link rel="alternate" hreflang="en" href="https://inematds.github.io/niveis-autonomia/guia/en/">
+<link rel="alternate" hreflang="es" href="https://inematds.github.io/niveis-autonomia/guia/es/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#E2A23B; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#b9791d; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .inema:hover{filter:brightness(1.15)}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro:hover{filter:brightness(1.15)}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .lang{display:inline-flex;gap:2px;font-family:Sora;font-size:.78rem}
+  .lang a{color:var(--mut);padding:.2em .45em;border-radius:6px} .lang a.on{color:var(--amb);background:rgba(226,162,59,.12)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--amb);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  @media(max-width:760px){nav .links a.sec{display:none}}
+  @media(max-width:520px){nav .wrap{gap:8px;padding:8px 14px;height:auto;flex-wrap:wrap} nav .links{gap:8px;margin-left:0;width:100%;justify-content:space-between} nav .btn{padding:.45em .7em;font-size:.82rem} .tgl{width:34px;height:34px}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(226,162,59,.22),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.18rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:34ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;height:auto;display:block}
+  .resumo{padding:38px 0 34px;border-bottom:1px solid var(--line)}
+  .resumo p{font-size:1.12rem;line-height:1.7;max-width:74ch;margin:.55em 0 0}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:62ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.92rem;margin:0}
+  .num{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:8px;background:rgba(226,162,59,.14);color:var(--amb);font-family:Sora;font-weight:800;font-size:.9rem;margin-bottom:.7em}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  .flow span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  pre{background:#0a0a0e;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-size:.86rem;line-height:1.6;color:#d6d6e0}
+  pre .c{color:#6f6f7c} pre .k{color:var(--amb2)} pre .s{color:#9ece6a}
+  .step{display:grid;grid-template-columns:46px minmax(0,1fr);gap:16px;margin-bottom:26px}
+  .step>div,.card{min-width:0}
+  p code,li code,td code{overflow-wrap:anywhere}
+  .step .b{width:46px;height:46px;border-radius:12px;background:var(--amb);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .7em}
+  .ex{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:680px){.ex{grid-template-columns:1fr}}
+  .ex figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .ex figure img{width:100%;height:auto;display:block}
+  .ex figcaption{padding:12px 14px;font-size:.88rem;color:var(--mut);background:var(--card)}
+  .phase{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .phase:last-child{border:none}
+  .phase .tag{flex:0 0 92px;font-family:Sora;font-weight:800;color:var(--amb)}
+  .phase .d strong{display:block;margin-bottom:.2em}
+  .phase .d span{color:var(--mut);font-size:.92rem}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
+
+  .techhead{background:var(--bg2);border-top:3px solid var(--amb);border-bottom:1px solid var(--line);padding:46px 0}
+  .techhead p{color:var(--mut);margin:.5em 0 0;max-width:62ch}
+  .techzone{background:var(--bg2)} .techzone section{border-color:var(--line)}
+  .nivel{display:grid;grid-template-columns:54px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+  .nivel:last-child{border:none}
+  .nivel .n{width:54px;height:54px;border-radius:14px;background:var(--amb);color:#1a1206;font:800 1.5rem Sora;display:flex;align-items:center;justify-content:center}
+  .nivel h3{font-size:1.1rem;margin-bottom:.25em} .nivel p{margin:.15em 0;color:var(--mut);font-size:.95rem} .nivel p b{color:var(--txt)}
+  table.t{width:100%;border-collapse:collapse;font-size:.92rem;margin:1em 0}
+  table.t th,table.t td{border-bottom:1px solid var(--line);padding:.6em .7em;text-align:left}
+  table.t th{font-family:Sora;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--amb)}
+  .box{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--amb);border-radius:12px;padding:16px 18px;margin:1.2em 0}
+  .box p{margin:.2em 0;color:var(--mut)} .box b{color:var(--txt)}
+  .big{font:800 clamp(2rem,5vw,3rem) Sora;color:var(--amb);line-height:1}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="emoji">🪜</span> Níveis de autonomia</a>
+  <span class="sep">|</span>
+  <span class="clubpro">
+    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <span class="sep">-</span>
+    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+  </span>
+  <div class="links">
+    <a class="sec" href="#niveis">Os 5 níveis</a>
+    <a class="sec" href="#medir">Como medir</a>
+    <a class="sec" href="#resultado">O que a medição mostrou</a>
+    <a class="sec" href="#plano">Plano de ação</a>
+    <a class="sec" href="#tecnico">Kit (técnico)</a>
+    <span class="lang"><a class="on" href="./">PT</a><a href="en/">EN</a><a href="es/">ES</a></span>
+    <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
+    <a class="btn" href="https://github.com/inematds/niveis-autonomia" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div>
+      <span class="chip">Kit · meça o que a IA faz sozinha</span>
+      <h1>Os 5 níveis de <span class="amb">autonomia</span> da IA no seu trabalho</h1>
+      <p class="lead">Do nível 0 (só consulta) ao 4 (gerencia o processo inteiro). Meça no papel ou deixe um programa registrar por você.</p>
+      <div class="cta">
+        <a class="btn" href="#niveis">Entender em 5 minutos</a>
+        <a class="btn ghost" href="https://github.com/inematds/niveis-autonomia" target="_blank" rel="noopener">Ver no GitHub</a>
+      </div>
+    </div>
+    <figure><img src="assets/banner.jpg" alt="Banner: níveis de autonomia, do 0 ao 4"></figure>
+  </div>
+</header>
+
+<section id="resumo" class="resumo"><div class="wrap">
+  <span class="chip">Em resumo</span>
+  <p>Este kit ensina a medir quanta liberdade você deu à IA em cada tarefa, numa escala de 0 a 4: de só responder até cuidar de um processo inteiro sozinha. Serve para quem usa IA no trabalho e quer saber o que ainda faz na mão e o que já pode entregar. Resolve o problema de dar autonomia no escuro, sem saber onde a IA acerta e onde estoura. Você começa hoje com uma ficha de papel; quem usa o Claude Code pode ligar um registro automático que lê as próprias sessões e anota cada conexão usada.</p>
+  <figure style="margin:26px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="Banner: consulta, sugere, com aprovação, faz e avisa, gerencia" loading="lazy" style="width:100%;display:block"></figure>
+</div></section>
+
+<section id="niveis"><div class="wrap">
+  <span class="chip">Os 5 níveis</span>
+  <h2>Autonomia não se dá de graça: se conquista</h2>
+  <p class="sub">O nível é de uma tarefa, não da IA inteira. A mesma IA pode estar no nível 3 para organizar arquivos e no nível 1 para escrever ao seu cliente.</p>
+
+  <div class="nivel"><div class="n">0</div><div><h3>Consulta</h3><p><b>A IA:</b> responde, sem tocar em nada.</p><p><b>Você:</b> decide e faz tudo.</p></div></div>
+  <div class="nivel"><div class="n">1</div><div><h3>Sugere</h3><p><b>A IA:</b> pesquisa, lê e monta o rascunho ou o plano. Não altera nada.</p><p><b>Você:</b> aplica a sugestão.</p></div></div>
+  <div class="nivel"><div class="n">2</div><div><h3>Faz com aprovação</h3><p><b>A IA:</b> altera arquivos e roda comandos, um passo por vez.</p><p><b>Você:</b> aprova cada passo.</p></div></div>
+  <div class="nivel"><div class="n">3</div><div><h3>Faz e avisa</h3><p><b>A IA:</b> executa sozinha dentro de limites e avisa quando termina.</p><p><b>Você:</b> revisa o resultado depois.</p></div></div>
+  <div class="nivel"><div class="n">4</div><div><h3>Gerencia o processo</h3><p><b>A IA:</b> roda o processo inteiro, inclusive o que sai da sua máquina (publicar, enviar, subir). Só chama você na exceção.</p><p><b>Você:</b> define a regra, olha o relatório e atende a exceção.</p></div></div>
+
+  <div class="box"><p><b>O erro que ninguém percebe até estourar:</b> soltar tudo no nível 4 de cara. A IA erra devagar e em silêncio, e você só descobre quando o estrago já está feito. Por isso sobe-se um nível por vez, uma tarefa por vez.</p></div>
+  <p class="mut">Os extremos (0 e 4) vêm do vídeo "5 Níveis de Autonomia da IA que Quase Ninguém Usa". Os níveis 1 a 3 foram escritos neste kit para ficarem medíveis.</p>
+</div></section>
+
+<section id="medir"><div class="wrap">
+  <span class="chip">Como medir</span>
+  <h2>Você só sobe o que consegue ver</h2>
+  <p class="sub">Sem registro, autonomia vira palpite. Com registro, você enxerga o que ainda faz na mão, o que a IA já faz sozinha e quais portas você abriu para ela.</p>
+  <div class="grid g2">
+    <div class="card"><h3>📝 No papel</h3><p>Uma ficha de impressão. A cada tarefa que a IA fez: data, tarefa, nível de 0 a 4, que conexão usou (pasta, e-mail, agenda, site...) e se você precisou corrigir. Começa hoje, sem instalar nada, com qualquer IA.</p></div>
+    <div class="card"><h3>🤖 Automático</h3><p>Um programa lê os registros das suas sessões com o Claude Code, classifica cada uma de 0 a 4 e anota toda conexão usada. Roda sozinho todo dia e acumula o histórico.</p></div>
+  </div>
+  <div class="box"><p><b>Papel e programa usam as mesmas colunas.</b> Você pode começar no papel e, quando quiser, passar para o automático sem perder o que já anotou.</p></div>
+  <h3 style="margin-top:2em">Quatro perguntas que a medição responde</h3>
+  <table class="t">
+    <tr><th>Pergunta</th><th>Onde aparece</th></tr>
+    <tr><td>O que eu ainda faço na mão e a IA poderia fazer?</td><td>Tarefas repetidas 3 vezes ou mais nos níveis 0 a 2</td></tr>
+    <tr><td>O que a IA já faz sozinha e eu nem lembrava?</td><td>Rotinas sem ninguém na conversa, nos níveis 3 e 4</td></tr>
+    <tr><td>Quais portas eu abri para ela?</td><td>Lista de conexões, com a primeira e a última vez de uso</td></tr>
+    <tr><td>Onde ela errou depois que eu soltei?</td><td>Coluna "precisou corrigir" da ficha</td></tr>
+  </table>
+</div></section>
+
+<section id="resultado"><div class="wrap">
+  <span class="chip">O que a medição mostrou</span>
+  <h2>Um caso real: 14 dias de trabalho de uma pessoa só</h2>
+  <p class="sub">Medição automática dos registros do Claude Code do autor deste kit, de 29/10 a 12/11/2026. Só números agregados (arquivo <code>exemplo/relatorio-agregado-2026-11-12.json</code>); nenhum conteúdo foi publicado.</p>
+  <div class="grid g3">
+    <div class="card"><div class="big">2.453</div><p>sessões registradas em 14 dias.</p></div>
+    <div class="card"><div class="big">171</div><p>com a pessoa na conversa (terminal ou Telegram). Dessas, 71% ficaram no nível 3 e 25% no nível 2.</p></div>
+    <div class="card"><div class="big">2.282</div><p>rodaram sem ninguém na conversa (rotinas, timers, pipelines). 12% chegaram ao nível 4 e responderam por 40% das ações que mudam algo.</p></div>
+  </div>
+  <div class="box"><p><b>O que isso ensinou:</b> misturar as duas coisas engana. Na primeira conta, metade das sessões parecia "só consulta" (nível 0). Eram passos curtos de pipelines automáticos, sem ferramenta. Separar "com você" de "sem você" mudou a leitura inteira.</p></div>
+  <div class="box"><p><b>Limite honesto:</b> o nível mostra quanta liberdade a IA teve, não se acertou. E o programa só enxerga o Claude Code; chamadas de API feitas dentro de um script aparecem apenas como "script", sem o nome do serviço.</p></div>
+</div></section>
+
+<section id="plano"><div class="wrap">
+  <span class="chip">Plano de ação</span>
+  <h2>Sua primeira semana</h2>
+  <p class="sub">Cinco passos, sem instalar nada até o quarto.</p>
+  <div class="step"><div class="b">1</div><div><h3>Imprima a ficha</h3><p>Abra <a href="https://inematds.github.io/niveis-autonomia/kit/ficha-papel.html"><code>kit/ficha-papel.html</code></a> e imprima em A4 deitado. Cole perto do computador.</p></div></div>
+  <div class="step"><div class="b">2</div><div><h3>Anote por 5 dias</h3><p>Uma linha por tarefa que a IA fez. Verbo mais objeto ("resumir contrato", "responder e-mail"). Marque o nível e a conexão.</p></div></div>
+  <div class="step"><div class="b">3</div><div><h3>Feche a sexta em 5 minutos</h3><p>Conte as linhas por nível. Tarefa repetida 3 vezes nos níveis 0 a 2 é candidata a subir. Tarefa nos níveis 3 ou 4 que você corrigiu mais de 1 vez em 10 desce um nível.</p></div></div>
+  <div class="step"><div class="b">4</div><div><h3>Se usa Claude Code, ligue o registro automático</h3><p>Veja a parte técnica abaixo. Leva alguns minutos e passa a medir sozinho.</p></div></div>
+  <div class="step"><div class="b">5</div><div><h3>Suba uma tarefa, não todas</h3><p>Escolha a tarefa mais repetida e mais segura. Suba um nível. Meça de novo na semana seguinte.</p></div></div>
+</div></section>
+
+<div id="tecnico" class="techhead"><div class="wrap">
+  <span class="chip">Parte técnica</span>
+  <h2>O kit: para quem quer o registro automático</h2>
+  <p>Você não precisa desta parte para entender o que está acima.</p>
+</div></div>
+
+<div class="techzone">
+<section id="kit"><div class="wrap">
+  <span class="chip">O que é o kit</span>
+  <h2>Três peças</h2>
+  <div class="grid g3">
+    <div class="card"><h3>medir/autonomia.py</h3><p>Programa em Python, sem dependências. Varre, classifica, relata e lista conexões. Só lê arquivos locais.</p></div>
+    <div class="card"><h3>kit/ficha-papel</h3><p>A ficha de impressão e o roteiro do fechamento semanal.</p></div>
+    <div class="card"><h3>systemd/</h3><p>Timer diário que mantém o registro em dia sem você lembrar.</p></div>
+  </div>
+</div></section>
+
+<section id="fluxo"><div class="wrap">
+  <span class="chip">Como funciona</span>
+  <h2>Do log à decisão</h2>
+  <div class="flow">
+    <span>Logs das sessões</span><span class="arr">→</span>
+    <span>Contar mensagens e ações</span><span class="arr">→</span>
+    <span>Ler o modo de permissão</span><span class="arr">→</span>
+    <span>Nível 0 a 4</span><span class="arr">→</span>
+    <span>Registro + relatório</span>
+  </div>
+  <table class="t">
+    <tr><th>Sinal no log</th><th>Como entra na regra</th></tr>
+    <tr><td>Nenhuma ferramenta usada</td><td>Nível 0</td></tr>
+    <tr><td>Só leitura (ler, buscar, listar)</td><td>Nível 1</td></tr>
+    <tr><td>Alterou algo e o modo pede aprovação</td><td>Nível 2</td></tr>
+    <tr><td>Alterou algo, sem pedir aprovação, várias ações por mensagem sua</td><td>Nível 3</td></tr>
+    <tr><td>No máximo 1 mensagem sua, 15 ou mais ações e pelo menos 1 efeito fora da máquina</td><td>Nível 4</td></tr>
+    <tr><td>Rodou sem terminal e sem você na conversa</td><td>Separado em "sem você" (rotinas)</td></tr>
+  </table>
+  <p class="mut">Os limites (15 ações, 3 ações por mensagem) ficam num único dicionário <code>LIM</code> no código, para você calibrar.</p>
+</div></section>
+
+<section id="pre"><div class="wrap">
+  <span class="chip">Pré-requisitos</span>
+  <h2>O que precisa</h2>
+  <div class="grid g2">
+    <div class="card"><h3>Python 3.9 ou mais novo</h3><p>Só a biblioteca padrão. Nada para instalar.</p><pre><span class="k">python3</span> --version</pre></div>
+    <div class="card"><h3>Claude Code com histórico</h3><p>O programa lê <code>~/.claude/projects</code>. Sem sessões ali, não há o que medir. No papel, qualquer IA serve.</p></div>
+  </div>
+</div></section>
+
+<section id="guia"><div class="wrap">
+  <span class="chip">Guia de uso · passo a passo</span>
+  <h2>Do clone ao relatório</h2>
+  <div class="step"><div class="b">1</div><div><h3>Baixe o kit</h3><p>Clone o repositório.</p>
+<pre><span class="k">git clone</span> <span class="s">https://github.com/inematds/niveis-autonomia</span>
+<span class="k">cd</span> niveis-autonomia</pre></div></div>
+  <div class="step"><div class="b">2</div><div><h3>Varra os registros</h3><p>A primeira vez lê os últimos 30 dias; as seguintes só leem o que mudou.</p>
+<pre><span class="k">python3</span> medir/autonomia.py varrer --desde 2026-10-15  <span class="c"># troque pela data que quiser</span></pre></div></div>
+  <div class="step"><div class="b">3</div><div><h3>Veja o relatório</h3><p>Distribuição por nível, separada em "com você" e "sem você", tarefas repetidas e conexões.</p>
+<pre><span class="k">python3</span> medir/autonomia.py relatorio</pre></div></div>
+  <div class="step"><div class="b">4</div><div><h3>Liste as conexões</h3><p>Tudo que a IA tocou: ferramentas de linha de comando, servidores MCP, skills, agentes, sites.</p>
+<pre><span class="k">python3</span> medir/autonomia.py conexoes
+<span class="k">python3</span> medir/autonomia.py inventario  <span class="c"># o que está configurado x o que foi usado (só nomes)</span></pre></div></div>
+  <div class="step"><div class="b">5</div><div><h3>Deixe rodando sozinho</h3><p>Instala um timer do seu usuário (sem sudo) que varre todo dia às 06:10 e grava <code>registro/ultimo-relatorio.md</code>.</p>
+<pre><span class="k">sh</span> systemd/instalar.sh
+<span class="c"># para desligar:</span>
+<span class="k">systemctl</span> --user disable --now niveis-autonomia.timer</pre></div></div>
+  <div class="step"><div class="b">6</div><div><h3>Teste a regra</h3><p>14 testes cobrem os 5 níveis, o modo de permissão, o Telegram e as rotinas.</p>
+<pre><span class="k">python3</span> -I -m unittest discover -s tests</pre></div></div>
+  <div class="box"><p><b>Privacidade:</b> tudo roda na sua máquina, sem chamar API. O registro fica em <code>registro/</code>, fora do git, com contagens e uma etiqueta curta da tarefa. O inventário lista só nomes, nunca chaves nem endereços.</p></div>
+</div></section>
+
+<section id="limites"><div class="wrap">
+  <span class="chip">Limites</span>
+  <h2>O que a medição não vê</h2>
+  <ul class="mut" style="line-height:1.9">
+    <li>Se você aprovou no prompt: só vê o modo de permissão da sessão.</li>
+    <li>Chamada de API de dentro de um script: aparece como <code>bash:python3</code>, sem o nome do serviço.</li>
+    <li>Outras ferramentas além do Claude Code (por exemplo o Codex): não lê.</li>
+    <li>Qualidade: o nível mede liberdade, não acerto. Acerto é a coluna "precisou corrigir" da ficha.</li>
+  </ul>
+</div></section>
+
+<section id="roadmap"><div class="wrap">
+  <span class="chip">Roadmap</span>
+  <h2>O que vem depois</h2>
+  <div class="phase"><div class="tag">Agora</div><div class="d"><strong>Claude Code + ficha de papel</strong><span>Classificação por sessão, conexões, inventário, timer diário.</span></div></div>
+  <div class="phase"><div class="tag">Próximo</div><div class="d"><strong>Ler o Codex</strong><span>Mesma classificação para as sessões de outras ferramentas.</span></div></div>
+  <div class="phase"><div class="tag">Depois</div><div class="d"><strong>Regra de promoção automática</strong><span>Sugerir "suba esta tarefa" quando a taxa de acerto e o volume passarem do limite que você definir.</span></div></div>
+</div></section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="pill">Python</div><div class="pill">systemd</div><div class="pill">Claude Code</div>
+    <p style="margin-top:18px">Níveis de autonomia · kit aberto e gratuito ·
+      <a href="https://github.com/inematds/niveis-autonomia">inematds/niveis-autonomia</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var KEY='niveis-autonomia-theme';
+    var b=document.body, t=document.getElementById('themeToggle');
+    if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; }
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      localStorage.setItem(KEY, light?'light':'dark');
+    });
+  })();
+</script>
+</body>
+</html>

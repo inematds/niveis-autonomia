@@ -1,0 +1,9 @@
+[Unit]
+Description=Niveis de autonomia: varredura diaria
+
+[Timer]
+OnCalendar=*-*-* 06:10:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
