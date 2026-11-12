@@ -164,12 +164,13 @@
   <h2>Autonomia não se dá de graça: se conquista</h2>
   <p class="sub">O nível é de uma tarefa, não da IA inteira. A mesma IA pode estar no nível 3 para organizar arquivos e no nível 1 para escrever ao seu cliente.</p>
 
-  <div class="nivel"><div class="n">0</div><div><h3>Consulta</h3><p><b>A IA:</b> responde, sem tocar em nada.</p><p><b>Você:</b> decide e faz tudo.</p></div></div>
-  <div class="nivel"><div class="n">1</div><div><h3>Sugere</h3><p><b>A IA:</b> pesquisa, lê e monta o rascunho ou o plano. Não altera nada.</p><p><b>Você:</b> aplica a sugestão.</p></div></div>
-  <div class="nivel"><div class="n">2</div><div><h3>Faz com aprovação</h3><p><b>A IA:</b> altera arquivos e roda comandos, um passo por vez.</p><p><b>Você:</b> aprova cada passo.</p></div></div>
-  <div class="nivel"><div class="n">3</div><div><h3>Faz e avisa</h3><p><b>A IA:</b> executa sozinha dentro de limites e avisa quando termina.</p><p><b>Você:</b> revisa o resultado depois.</p></div></div>
-  <div class="nivel"><div class="n">4</div><div><h3>Gerencia o processo</h3><p><b>A IA:</b> roda o processo inteiro, inclusive o que sai da sua máquina (publicar, enviar, subir). Só chama você na exceção.</p><p><b>Você:</b> define a regra, olha o relatório e atende a exceção.</p></div></div>
+  <div class="nivel"><div class="n">0</div><div><h3>Consulta</h3><p><b>A IA:</b> responde, sem tocar em nada.</p><p><b>Você:</b> decide e faz tudo.</p><p class="mut"><b>Exemplo, responder o e-mail de um cliente:</b> a IA explica como responder; você escreve e envia.</p></div></div>
+  <div class="nivel"><div class="n">1</div><div><h3>Sugere</h3><p><b>A IA:</b> pesquisa, lê e monta o rascunho ou o plano. Não altera nada.</p><p><b>Você:</b> aplica a sugestão.</p><p class="mut"><b>Exemplo:</b> a IA escreve o rascunho; você copia, ajusta e envia.</p></div></div>
+  <div class="nivel"><div class="n">2</div><div><h3>Faz com aprovação</h3><p><b>A IA:</b> altera arquivos e roda comandos, um passo por vez.</p><p><b>Você:</b> aprova cada passo.</p><p class="mut"><b>Exemplo:</b> a IA deixa o e-mail pronto na sua caixa de saída; você aprova cada envio.</p></div></div>
+  <div class="nivel"><div class="n">3</div><div><h3>Faz e avisa</h3><p><b>A IA:</b> executa sozinha dentro de limites e avisa quando termina.</p><p><b>Você:</b> revisa o resultado depois.</p><p class="mut"><b>Exemplo:</b> a IA responde os e-mails de rotina e manda um resumo no fim do dia.</p></div></div>
+  <div class="nivel"><div class="n">4</div><div><h3>Gerencia o processo</h3><p><b>A IA:</b> roda o processo inteiro, inclusive o que sai da sua máquina (publicar, enviar, subir). Só chama você na exceção.</p><p><b>Você:</b> define a regra, olha o relatório e atende a exceção.</p><p class="mut"><b>Exemplo:</b> a IA cuida de toda a caixa de entrada do atendimento (responde, encaminha, agenda) e só chama você nos casos fora da regra.</p></div></div>
 
+  <div class="box"><p><b>Em dúvida, pergunte três coisas:</b> a IA mexeu em algo, ou só respondeu? Ela pediu a minha aprovação antes? Eu estava presente enquanto ela fazia? Sem mexer, é nível 0 ou 1. Mexeu e pediu aprovação, nível 2. Mexeu sozinha e avisou, nível 3. Cuidou do processo todo e só chamou na exceção, nível 4.</p></div>
   <div class="box"><p><b>O erro que ninguém percebe até estourar:</b> soltar tudo no nível 4 de cara. A IA erra devagar e em silêncio, e você só descobre quando o estrago já está feito. Por isso sobe-se um nível por vez, uma tarefa por vez.</p></div>
   <p class="mut">Os extremos (0 e 4) vêm do vídeo "5 Níveis de Autonomia da IA que Quase Ninguém Usa". Os níveis 1 a 3 foram escritos neste kit para ficarem medíveis.</p>
 </div></section>
@@ -196,14 +197,15 @@
 <section id="resultado"><div class="wrap">
   <span class="chip">O que a medição mostrou</span>
   <h2>Um caso real: 14 dias de trabalho de uma pessoa só</h2>
-  <p class="sub">Medição automática dos registros do Claude Code do autor deste kit, de 29/10 a 12/11/2026. Só números agregados (arquivo <code>exemplo/relatorio-agregado-2026-11-12.json</code>); nenhum conteúdo foi publicado.</p>
+  <p class="sub">Medição automática dos registros do Claude Code do autor deste kit, de 29 de outubro a 12 de novembro de 2026. Só números agregados (arquivo <a href="https://github.com/inematds/niveis-autonomia/blob/main/exemplo/relatorio-agregado-2026-11-12.json"><code>exemplo/relatorio-agregado-2026-11-12.json</code></a>); nenhum conteúdo foi publicado.</p>
   <div class="grid g3">
     <div class="card"><div class="big">2.453</div><p>sessões registradas em 14 dias.</p></div>
     <div class="card"><div class="big">171</div><p>com a pessoa na conversa (terminal ou Telegram). Dessas, 71% ficaram no nível 3 e 25% no nível 2.</p></div>
-    <div class="card"><div class="big">2.282</div><p>rodaram sem ninguém na conversa (rotinas, timers, pipelines). 12% chegaram ao nível 4 e responderam por 40% das ações que mudam algo.</p></div>
+    <div class="card"><div class="big">2.282</div><p>rodaram sem ninguém digitando: são rotinas automáticas, que disparam num horário e seguem sozinhas. 12% chegaram ao nível 4 e responderam por 40% de tudo que a IA alterou (arquivos, comandos, envios).</p></div>
   </div>
-  <div class="box"><p><b>O que isso ensinou:</b> misturar as duas coisas engana. Na primeira conta, metade das sessões parecia "só consulta" (nível 0). Eram passos curtos de pipelines automáticos, sem ferramenta. Separar "com você" de "sem você" mudou a leitura inteira.</p></div>
-  <div class="box"><p><b>Limite honesto:</b> o nível mostra quanta liberdade a IA teve, não se acertou. E o programa só enxerga o Claude Code; chamadas de API feitas dentro de um script aparecem apenas como "script", sem o nome do serviço.</p></div>
+  <div class="box"><p><b>O que isso ensinou:</b> misturar as duas coisas engana. Na primeira conta, metade das sessões parecia "só consulta" (nível 0). Eram passos curtos de rotinas automáticas, em que a IA só respondeu. Separar "com você" de "sem você" mudou a leitura inteira.</p></div>
+  <div class="box"><p><b>Limite honesto:</b> o nível mostra quanta liberdade a IA teve, não se acertou. E o programa só enxerga o Claude Code.</p></div>
+  <div class="box"><p><b>Não se compare com estes números.</b> O autor é técnico e deixa muita coisa rodando sozinha. Quem está começando, como o dono de uma agência, deve ter a maior parte do uso nos níveis 1 e 2, e isso é o esperado: o ponto é medir o seu ponto de partida.</p></div>
 </div></section>
 
 <section id="plano"><div class="wrap">
@@ -259,8 +261,9 @@
 <section id="pre"><div class="wrap">
   <span class="chip">Pré-requisitos</span>
   <h2>O que precisa</h2>
-  <div class="grid g2">
+  <div class="grid g3">
     <div class="card"><h3>Python 3.9 ou mais novo</h3><p>Só a biblioteca padrão. Nada para instalar.</p><pre><span class="k">python3</span> --version</pre></div>
+    <div class="card"><h3>Linux ou Mac, com git</h3><p>O registro automático roda em qualquer sistema com Python. O timer diário usa systemd, que é do Linux; no Mac, rode o comando <code>varrer</code> à mão ou use o agendador do seu sistema. Windows: use o papel, ou o WSL.</p></div>
     <div class="card"><h3>Claude Code com histórico</h3><p>O programa lê <code>~/.claude/projects</code>. Sem sessões ali, não há o que medir. No papel, qualquer IA serve.</p></div>
   </div>
 </div></section>
@@ -272,7 +275,7 @@
 <pre><span class="k">git clone</span> <span class="s">https://github.com/inematds/niveis-autonomia</span>
 <span class="k">cd</span> niveis-autonomia</pre></div></div>
   <div class="step"><div class="b">2</div><div><h3>Varra os registros</h3><p>A primeira vez lê os últimos 30 dias; as seguintes só leem o que mudou.</p>
-<pre><span class="k">python3</span> medir/autonomia.py varrer --desde 2026-10-15  <span class="c"># troque pela data que quiser</span></pre></div></div>
+<pre><span class="k">python3</span> medir/autonomia.py varrer --desde $(date -d <span class="s">"-30 days"</span> +%F)  <span class="c"># últimos 30 dias</span></pre></div></div>
   <div class="step"><div class="b">3</div><div><h3>Veja o relatório</h3><p>Distribuição por nível, separada em "com você" e "sem você", tarefas repetidas e conexões.</p>
 <pre><span class="k">python3</span> medir/autonomia.py relatorio</pre></div></div>
   <div class="step"><div class="b">4</div><div><h3>Liste as conexões</h3><p>Tudo que a IA tocou: ferramentas de linha de comando, servidores MCP, skills, agentes, sites.</p>
@@ -282,7 +285,7 @@
 <pre><span class="k">sh</span> systemd/instalar.sh
 <span class="c"># para desligar:</span>
 <span class="k">systemctl</span> --user disable --now niveis-autonomia.timer</pre></div></div>
-  <div class="step"><div class="b">6</div><div><h3>Teste a regra</h3><p>14 testes cobrem os 5 níveis, o modo de permissão, o Telegram e as rotinas.</p>
+  <div class="step"><div class="b">6</div><div><h3>Teste a regra</h3><p>14 testes cobrem os 5 níveis, o modo de permissão e a separação entre sessões com e sem pessoa.</p>
 <pre><span class="k">python3</span> -I -m unittest discover -s tests</pre></div></div>
   <div class="box"><p><b>Privacidade:</b> tudo roda na sua máquina, sem chamar API. O registro fica em <code>registro/</code>, fora do git, com contagens e uma etiqueta curta da tarefa. O inventário lista só nomes, nunca chaves nem endereços.</p></div>
 </div></section>

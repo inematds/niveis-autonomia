@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Autonomy levels: measure what AI does on its own</title>
-<meta name="description" content="A kit to measure how much of your work AI does on its own, from level 0 (query) to level 4 (runs the process), on paper or with automatic tracking.">
+<title>Autonomy Levels: Measure What AI Does on Its Own</title>
+<meta name="description" content="A kit to measure how much of your work AI does on its own, from level 0 (queries) to level 4 (runs the process), on paper or with automatic tracking.">
 <link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/niveis-autonomia/guia/">
 <link rel="alternate" hreflang="en" href="https://inematds.github.io/niveis-autonomia/guia/en/">
 <link rel="alternate" hreflang="es" href="https://inematds.github.io/niveis-autonomia/guia/es/">
@@ -118,7 +118,7 @@
 <body>
 
 <nav><div class="wrap">
-  <a class="brand" href="#top"><span class="emoji">🪜</span> Autonomy levels</a>
+  <a class="brand" href="#top"><span class="emoji">🪜</span> Autonomy Levels</a>
   <span class="sep">|</span>
   <span class="clubpro">
     <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
@@ -142,8 +142,8 @@
   <div class="wrap">
     <div>
       <span class="chip">Kit · measure what AI does on its own</span>
-      <h1>The 5 levels of AI <span class="amb">autonomy</span> at work</h1>
-      <p class="lead">From level 0 (just asking) to level 4 (runs the entire process). Measure it on paper or let a program track it for you.</p>
+      <h1>The 5 levels of AI <span class="amb">autonomy</span> in your work</h1>
+      <p class="lead">From level 0 (queries only) to 4 (runs the entire process). Measure on paper or let a program track it for you.</p>
       <div class="cta">
         <a class="btn" href="#niveis">Understand it in 5 minutes</a>
         <a class="btn ghost" href="https://github.com/inematds/niveis-autonomia" target="_blank" rel="noopener">View on GitHub</a>
@@ -154,83 +154,85 @@
 </header>
 
 <section id="resumo" class="resumo"><div class="wrap">
-  <span class="chip">In brief</span>
-  <p>This kit shows you how to measure how much freedom you give AI for each task, on a scale from 0 to 4: from simply answering to handling an entire process on its own. It is for people who use AI at work and want to know what they still do by hand and what they can hand off. It addresses the problem of granting autonomy in the dark, without knowing where AI gets things right and where it goes too far. You can start today with a paper form; if you use Claude Code, you can turn on automatic tracking that reads your own sessions and records every connection used.</p>
+  <span class="chip">In summary</span>
+  <p>This kit teaches you to measure how much freedom you have given AI for each task, on a scale from 0 to 4: from simply responding to handling an entire process on its own. It is for people who use AI at work and want to know what they still do by hand and what they can hand over. It solves the problem of granting autonomy in the dark, without knowing where AI gets things right and where it breaks things. You can start today with a paper sheet; Claude Code users can enable automatic tracking that reads their own sessions and logs each connection used.</p>
   <figure style="margin:26px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="../assets/banner-grade-en.jpg" alt="Banner: queries, suggests, acts with approval, acts and tells, runs the process" loading="lazy" style="width:100%;display:block"></figure>
 </div></section>
 
 <section id="niveis"><div class="wrap">
   <span class="chip">The 5 levels</span>
-  <h2>Autonomy is earned, not given freely</h2>
-  <p class="sub">A level applies to a task, not to the entire AI. The same AI can be at level 3 for organizing files and level 1 for writing to your client.</p>
+  <h2>Autonomy is earned, not given for free</h2>
+  <p class="sub">The level applies to a task, not to the whole AI. The same AI can be at level 3 for organizing files and level 1 for writing to your client.</p>
 
-  <div class="nivel"><div class="n">0</div><div><h3>Queries</h3><p><b>AI:</b> answers without touching anything.</p><p><b>You:</b> decide and do everything.</p></div></div>
-  <div class="nivel"><div class="n">1</div><div><h3>Suggests</h3><p><b>AI:</b> researches, reads, and prepares a draft or plan. It changes nothing.</p><p><b>You:</b> apply the suggestion.</p></div></div>
-  <div class="nivel"><div class="n">2</div><div><h3>Acts with approval</h3><p><b>AI:</b> edits files and runs commands, one step at a time.</p><p><b>You:</b> approve each step.</p></div></div>
-  <div class="nivel"><div class="n">3</div><div><h3>Acts and tells</h3><p><b>AI:</b> works on its own within limits and tells you when it is done.</p><p><b>You:</b> review the result afterward.</p></div></div>
-  <div class="nivel"><div class="n">4</div><div><h3>Runs the process</h3><p><b>AI:</b> runs the entire process, including actions outside your machine (publishing, sending, uploading). It only calls you when an exception occurs.</p><p><b>You:</b> set the rule, review the report, and handle exceptions.</p></div></div>
+  <div class="nivel"><div class="n">0</div><div><h3>Queries</h3><p><b>AI:</b> responds without touching anything.</p><p><b>You:</b> decide and do everything.</p><p class="mut"><b>Example, replying to a client's email:</b> AI explains how to respond; you write and send it.</p></div></div>
+  <div class="nivel"><div class="n">1</div><div><h3>Suggests</h3><p><b>AI:</b> researches, reads, and prepares a draft or plan. It changes nothing.</p><p><b>You:</b> apply the suggestion.</p><p class="mut"><b>Example:</b> AI writes the draft; you copy, edit, and send it.</p></div></div>
+  <div class="nivel"><div class="n">2</div><div><h3>Acts with approval</h3><p><b>AI:</b> edits files and runs commands, one step at a time.</p><p><b>You:</b> approve each step.</p><p class="mut"><b>Example:</b> AI prepares the email in your outbox; you approve each send.</p></div></div>
+  <div class="nivel"><div class="n">3</div><div><h3>Acts and tells</h3><p><b>AI:</b> acts on its own within limits and tells you when it is done.</p><p><b>You:</b> review the result afterward.</p><p class="mut"><b>Example:</b> AI replies to routine emails and sends a summary at the end of the day.</p></div></div>
+  <div class="nivel"><div class="n">4</div><div><h3>Runs the process</h3><p><b>AI:</b> runs the entire process, including actions outside your computer (publishing, sending, uploading). It only calls you when an exception comes up.</p><p><b>You:</b> set the rule, review the report, and handle exceptions.</p><p class="mut"><b>Example:</b> AI handles the entire customer support inbox (replies, forwards, schedules) and only calls you about cases outside the rule.</p></div></div>
 
-  <div class="box"><p><b>The mistake no one notices until things go wrong:</b> handing everything over at level 4 right away. AI makes mistakes slowly and silently, and you only find out after the damage is done. That is why you move up one level at a time, one task at a time.</p></div>
-  <p class="mut">The endpoints (0 and 4) come from the video “5 Níveis de Autonomia da IA que Quase Ninguém Usa” (in Portuguese). Levels 1 to 3 were written for this kit to make them measurable.</p>
+  <div class="box"><p><b>When in doubt, ask three questions:</b> Did AI change anything, or only respond? Did it ask for my approval first? Was I there while it worked? If it changed nothing, it is level 0 or 1. If it changed something and asked for approval, level 2. If it changed something on its own and told you, level 3. If it handled the entire process and only called you for exceptions, level 4.</p></div>
+  <div class="box"><p><b>The mistake no one notices until things go wrong:</b> letting everything loose at level 4 right away. AI makes mistakes slowly and silently, and you only find out after the damage is done. That is why you move up one level at a time, one task at a time.</p></div>
+  <p class="mut">The extremes (0 and 4) come from the video “5 Níveis de Autonomia da IA que Quase Ninguém Usa” (in Portuguese). Levels 1 to 3 were written for this kit to make them measurable.</p>
 </div></section>
 
 <section id="medir"><div class="wrap">
   <span class="chip">How to measure</span>
   <h2>You can only raise what you can see</h2>
-  <p class="sub">Without records, autonomy is a guess. With records, you can see what you still do by hand, what AI already does on its own, and which doors you have opened for it.</p>
+  <p class="sub">Without tracking, autonomy is just a guess. With tracking, you can see what you still do by hand, what AI already does on its own, and which doors you have opened for it.</p>
   <div class="grid g2">
-    <div class="card"><h3>📝 On paper</h3><p>A printable form. For each task AI completes, record the date, task, level from 0 to 4, which connection it used (folder, email, calendar, website...), and whether you needed to correct it. Start today, without installing anything, with any AI.</p></div>
-    <div class="card"><h3>🤖 Automatic</h3><p>A program reads your Claude Code session records, classifies each one from 0 to 4, and records every connection used. It runs on its own every day and builds a history.</p></div>
+    <div class="card"><h3>📝 On paper</h3><p>A sheet to print. For every task AI completes, record the date, task, level from 0 to 4, the connection it used (folder, email, calendar, website...) and whether you had to correct it. Start today, without installing anything, with any AI.</p></div>
+    <div class="card"><h3>🤖 Automatic</h3><p>A program reads your Claude Code session logs, classifies each one from 0 to 4, and records every connection used. It runs on its own every day and builds a history.</p></div>
   </div>
-  <div class="box"><p><b>The paper and program use the same columns.</b> You can start on paper and switch to automatic tracking whenever you want, without losing what you have already recorded.</p></div>
+  <div class="box"><p><b>Paper and program use the same columns.</b> You can start on paper and switch to automatic tracking whenever you want, without losing what you have already recorded.</p></div>
   <h3 style="margin-top:2em">Four questions the measurement answers</h3>
   <table class="t">
     <tr><th>Question</th><th>Where it appears</th></tr>
     <tr><td>What do I still do by hand that AI could do?</td><td>Tasks repeated 3 or more times at levels 0 to 2</td></tr>
     <tr><td>What does AI already do on its own that I had forgotten about?</td><td>Routines with no one in the conversation, at levels 3 and 4</td></tr>
     <tr><td>Which doors have I opened for it?</td><td>List of connections, with the first and last time each was used</td></tr>
-    <tr><td>Where did it make a mistake after I let it work on its own?</td><td>The “needed correction” column on the form</td></tr>
+    <tr><td>Where did it make a mistake after I let it go?</td><td>The “needed correction” column on the sheet</td></tr>
   </table>
 </div></section>
 
 <section id="resultado"><div class="wrap">
   <span class="chip">What the measurement showed</span>
-  <h2>A real case: 14 days of one person’s work</h2>
-  <p class="sub">Automatic measurement of this kit’s author’s Claude Code records, from 29/10 to 12/11/2026. Aggregate numbers only (file <code>exemplo/relatorio-agregado-2026-11-12.json</code>); no content was published.</p>
+  <h2>A real case: 14 days of one person's work</h2>
+  <p class="sub">Automatic measurement of this kit's author's Claude Code logs, from October 29 to November 12, 2026. Aggregate numbers only (file <a href="https://github.com/inematds/niveis-autonomia/blob/main/exemplo/relatorio-agregado-2026-11-12.json"><code>exemplo/relatorio-agregado-2026-11-12.json</code></a>); no content was published.</p>
   <div class="grid g3">
-    <div class="card"><div class="big">2.453</div><p>sessions recorded over 14 days.</p></div>
+    <div class="card"><div class="big">2,453</div><p>sessions recorded over 14 days.</p></div>
     <div class="card"><div class="big">171</div><p>with the person in the conversation (terminal or Telegram). Of these, 71% were at level 3 and 25% at level 2.</p></div>
-    <div class="card"><div class="big">2.282</div><p>ran with no one in the conversation (routines, timers, pipelines). 12% reached level 4 and accounted for 40% of actions that change something.</p></div>
+    <div class="card"><div class="big">2,282</div><p>ran with no one typing: these are automatic routines, triggered at a set time and carried out on their own. 12% reached level 4 and accounted for 40% of everything AI changed (files, commands, sends).</p></div>
   </div>
-  <div class="box"><p><b>What this taught us:</b> mixing the two types is misleading. In the first count, half of the sessions looked like “just queries” (level 0). They were short steps in automatic pipelines, with no tool. Separating “with you” from “without you” changed the whole picture.</p></div>
-  <div class="box"><p><b>An honest limitation:</b> the level shows how much freedom AI had, not whether it got things right. And the program only sees Claude Code; API calls made inside a script appear only as “script,” without the service name.</p></div>
+  <div class="box"><p><b>What this taught us:</b> mixing the two types is misleading. In the first count, half the sessions looked like “queries only” (level 0). They were short steps in automatic routines where AI only responded. Separating “with you” from “without you” changed the entire picture.</p></div>
+  <div class="box"><p><b>An honest limitation:</b> the level shows how much freedom AI had, not whether it got things right. And the program only sees Claude Code.</p></div>
+  <div class="box"><p><b>Do not compare yourself with these numbers.</b> The author is technical and leaves many things running on their own. Someone just starting out, such as an agency owner, should have most of their use at levels 1 and 2, and that is expected: the point is to measure your starting point.</p></div>
 </div></section>
 
 <section id="plano"><div class="wrap">
   <span class="chip">Action plan</span>
   <h2>Your first week</h2>
   <p class="sub">Five steps, with nothing to install until the fourth.</p>
-  <div class="step"><div class="b">1</div><div><h3>Print the form</h3><p>Open <a href="https://inematds.github.io/niveis-autonomia/kit/ficha-papel.html"><code>kit/ficha-papel.html</code></a> and print it on A4 paper in landscape orientation. Put it near your computer.</p></div></div>
-  <div class="step"><div class="b">2</div><div><h3>Record tasks for 5 days</h3><p>One line for each task AI completes. Use a verb plus an object (“summarize a contract,” “reply to an email”). Mark the level and connection.</p></div></div>
-  <div class="step"><div class="b">3</div><div><h3>Wrap up Friday in 5 minutes</h3><p>Count the lines at each level. A task repeated 3 times at levels 0 to 2 is a candidate for moving up. If you corrected a task at level 3 or 4 more than 1 time in 10, move it down one level.</p></div></div>
-  <div class="step"><div class="b">4</div><div><h3>If you use Claude Code, turn on automatic tracking</h3><p>See the technical section below. It takes a few minutes to set up and then measures on its own.</p></div></div>
-  <div class="step"><div class="b">5</div><div><h3>Move one task up, not all of them</h3><p>Choose the task that is most frequent and safest. Move it up one level. Measure again the following week.</p></div></div>
+  <div class="step"><div class="b">1</div><div><h3>Print the sheet</h3><p>Open <a href="https://inematds.github.io/niveis-autonomia/kit/ficha-papel.en.html"><code>kit/ficha-papel.en.html</code></a> and print it in landscape on A4 paper. Put it near your computer.</p></div></div>
+  <div class="step"><div class="b">2</div><div><h3>Take notes for 5 days</h3><p>One line for each task AI did. Use a verb and an object (“summarize contract,” “reply to email”). Mark the level and connection.</p></div></div>
+  <div class="step"><div class="b">3</div><div><h3>Wrap up Friday in 5 minutes</h3><p>Count the lines at each level. A task repeated 3 times at levels 0 to 2 is a candidate to move up. A task at levels 3 or 4 that you corrected more than 1 time in 10 should move down one level.</p></div></div>
+  <div class="step"><div class="b">4</div><div><h3>If you use Claude Code, enable automatic tracking</h3><p>See the technical section below. It takes a few minutes and then measures on its own.</p></div></div>
+  <div class="step"><div class="b">5</div><div><h3>Move up one task, not all of them</h3><p>Choose the most repeated and safest task. Move it up one level. Measure again the following week.</p></div></div>
 </div></section>
 
 <div id="tecnico" class="techhead"><div class="wrap">
   <span class="chip">Technical section</span>
-  <h2>The kit: for those who want automatic tracking</h2>
+  <h2>The kit: for automatic tracking</h2>
   <p>You do not need this section to understand what came before.</p>
 </div></div>
 
 <div class="techzone">
 <section id="kit"><div class="wrap">
-  <span class="chip">What’s in the kit</span>
+  <span class="chip">What is in the kit</span>
   <h2>Three parts</h2>
   <div class="grid g3">
-    <div class="card"><h3>medir/autonomia.py</h3><p>A Python program with no dependencies. It scans, classifies, reports, and lists connections. It only reads local files.</p></div>
-    <div class="card"><h3>kit/ficha-papel</h3><p>The printable form and the weekly review guide.</p></div>
-    <div class="card"><h3>systemd/</h3><p>A daily timer that keeps the records up to date without you having to remember.</p></div>
+    <div class="card"><h3>medir/autonomia.py</h3><p>Python program with no dependencies. Scans, classifies, reports, and lists connections. It only reads local files.</p></div>
+    <div class="card"><h3>kit/ficha-papel</h3><p>The printable sheet and the weekly review guide.</p></div>
+    <div class="card"><h3>systemd/</h3><p>Daily timer that keeps the tracking up to date without you having to remember.</p></div>
   </div>
 </div></section>
 
@@ -240,28 +242,29 @@
   <div class="flow">
     <span>Session logs</span><span class="arr">→</span>
     <span>Count messages and actions</span><span class="arr">→</span>
-    <span>Read the permission mode</span><span class="arr">→</span>
+    <span>Read permission mode</span><span class="arr">→</span>
     <span>Level 0 to 4</span><span class="arr">→</span>
-    <span>Record + report</span>
+    <span>Tracking + report</span>
   </div>
   <table class="t">
-    <tr><th>Signal in the log</th><th>How it fits the rule</th></tr>
+    <tr><th>Signal in the log</th><th>How it is classified</th></tr>
     <tr><td>No tools used</td><td>Level 0</td></tr>
     <tr><td>Read only (read, search, list)</td><td>Level 1</td></tr>
     <tr><td>Changed something and the mode requires approval</td><td>Level 2</td></tr>
     <tr><td>Changed something without asking for approval, several actions per message from you</td><td>Level 3</td></tr>
-    <tr><td>At most 1 message from you, 15 or more actions, and at least 1 effect outside the machine</td><td>Level 4</td></tr>
-    <tr><td>Ran without a terminal and with no one in the conversation</td><td>Separated as “without you” (routines)</td></tr>
+    <tr><td>At most 1 message from you, 15 or more actions, and at least 1 effect outside the computer</td><td>Level 4</td></tr>
+    <tr><td>Ran without a terminal and without you in the conversation</td><td>Separated as “without you” (routines)</td></tr>
   </table>
-  <p class="mut">The thresholds (15 actions, 3 actions per message) are kept in a single <code>LIM</code> dictionary in the code, so you can calibrate them.</p>
+  <p class="mut">The limits (15 actions, 3 actions per message) are in a single <code>LIM</code> dictionary in the code, so you can adjust them.</p>
 </div></section>
 
 <section id="pre"><div class="wrap">
   <span class="chip">Requirements</span>
   <h2>What you need</h2>
-  <div class="grid g2">
-    <div class="card"><h3>Python 3.9 or newer</h3><p>Standard library only. Nothing to install.</p><pre><span class="k">python3</span> --version</pre></div>
-    <div class="card"><h3>Claude Code with history</h3><p>The program reads <code>~/.claude/projects</code>. If there are no sessions there, there is nothing to measure. Any AI works for the paper form.</p></div>
+  <div class="grid g3">
+    <div class="card"><h3>Python 3.9 or later</h3><p>Standard library only. Nothing to install.</p><pre><span class="k">python3</span> --version</pre></div>
+    <div class="card"><h3>Linux or Mac, with git</h3><p>Automatic tracking runs on any system with Python. The daily timer uses systemd, which is for Linux; on Mac, run the <code>varrer</code> command by hand or use your system scheduler. Windows: use paper or WSL.</p></div>
+    <div class="card"><h3>Claude Code with history</h3><p>The program reads <code>~/.claude/projects</code>. If there are no sessions there, there is nothing to measure. Any AI works with the paper sheet.</p></div>
   </div>
 </div></section>
 
@@ -271,46 +274,46 @@
   <div class="step"><div class="b">1</div><div><h3>Download the kit</h3><p>Clone the repository.</p>
 <pre><span class="k">git clone</span> <span class="s">https://github.com/inematds/niveis-autonomia</span>
 <span class="k">cd</span> niveis-autonomia</pre></div></div>
-  <div class="step"><div class="b">2</div><div><h3>Scan the records</h3><p>The first run reads the last 30 days; later runs only read what has changed.</p>
-<pre><span class="k">python3</span> medir/autonomia.py varrer --desde 2026-10-15  <span class="c"># replace with the date you want</span></pre></div></div>
-  <div class="step"><div class="b">3</div><div><h3>View the report</h3><p>Distribution by level, separated into “with you” and “without you,” repeated tasks, and connections.</p>
+  <div class="step"><div class="b">2</div><div><h3>Scan the logs</h3><p>The first run reads the last 30 days; later runs only read what has changed.</p>
+<pre><span class="k">python3</span> medir/autonomia.py varrer --desde $(date -d <span class="s">"-30 days"</span> +%F)  <span class="c"># last 30 days</span></pre></div></div>
+  <div class="step"><div class="b">3</div><div><h3>View the report</h3><p>Distribution by level, split into “with you” and “without you,” repeated tasks, and connections.</p>
 <pre><span class="k">python3</span> medir/autonomia.py relatorio</pre></div></div>
   <div class="step"><div class="b">4</div><div><h3>List the connections</h3><p>Everything AI touched: command-line tools, MCP servers, skills, agents, websites.</p>
 <pre><span class="k">python3</span> medir/autonomia.py conexoes
-<span class="k">python3</span> medir/autonomia.py inventario  <span class="c"># what is configured vs. what was used (names only)</span></pre></div></div>
-  <div class="step"><div class="b">5</div><div><h3>Let it run on its own</h3><p>Installs a timer for your user (without sudo) that scans every day at 06:10 and saves <code>registro/ultimo-relatorio.md</code>.</p>
+<span class="k">python3</span> medir/autonomia.py inventario  <span class="c"># what is configured vs what was used (names only)</span></pre></div></div>
+  <div class="step"><div class="b">5</div><div><h3>Let it run on its own</h3><p>Installs a timer for your user (no sudo) that scans every day at 06:10 and saves <code>registro/ultimo-relatorio.md</code>.</p>
 <pre><span class="k">sh</span> systemd/instalar.sh
-<span class="c"># to turn it off:</span>
+<span class="c"># to disable:</span>
 <span class="k">systemctl</span> --user disable --now niveis-autonomia.timer</pre></div></div>
-  <div class="step"><div class="b">6</div><div><h3>Test the rule</h3><p>14 tests cover the 5 levels, permission mode, Telegram, and routines.</p>
+  <div class="step"><div class="b">6</div><div><h3>Test the rule</h3><p>14 tests cover the 5 levels, permission mode, and the separation between sessions with and without a person.</p>
 <pre><span class="k">python3</span> -I -m unittest discover -s tests</pre></div></div>
-  <div class="box"><p><b>Privacy:</b> everything runs on your machine, without calling an API. Records stay in <code>registro/</code>, outside git, with counts and a short task label. The inventory lists names only, never keys or addresses.</p></div>
+  <div class="box"><p><b>Privacy:</b> everything runs on your computer without calling an API. The tracking data stays in <code>registro/</code>, outside git, with counts and a short task label. The inventory lists names only, never keys or addresses.</p></div>
 </div></section>
 
 <section id="limites"><div class="wrap">
   <span class="chip">Limitations</span>
   <h2>What the measurement cannot see</h2>
   <ul class="mut" style="line-height:1.9">
-    <li>Whether you approved in the prompt: it only sees the session’s permission mode.</li>
+    <li>Whether you approved in the prompt: it only sees the session's permission mode.</li>
     <li>An API call from inside a script: it appears as <code>bash:python3</code>, without the service name.</li>
-    <li>Other tools besides Claude Code (for example, Codex): it cannot read them.</li>
-    <li>Quality: the level measures freedom, not accuracy. Accuracy is tracked in the form’s “needed correction” column.</li>
+    <li>Tools other than Claude Code (for example, Codex): it does not read them.</li>
+    <li>Quality: the level measures freedom, not accuracy. Accuracy is recorded in the sheet's “needed correction” column.</li>
   </ul>
 </div></section>
 
 <section id="roadmap"><div class="wrap">
   <span class="chip">Roadmap</span>
   <h2>What comes next</h2>
-  <div class="phase"><div class="tag">Now</div><div class="d"><strong>Claude Code + paper form</strong><span>Classification by session, connections, inventory, daily timer.</span></div></div>
-  <div class="phase"><div class="tag">Next</div><div class="d"><strong>Read Codex</strong><span>The same classification for sessions from other tools.</span></div></div>
-  <div class="phase"><div class="tag">Later</div><div class="d"><strong>Automatic promotion rule</strong><span>Suggest “move this task up” when the accuracy rate and volume exceed the threshold you set.</span></div></div>
+  <div class="phase"><div class="tag">Now</div><div class="d"><strong>Claude Code + paper sheet</strong><span>Classification by session, connections, inventory, daily timer.</span></div></div>
+  <div class="phase"><div class="tag">Next</div><div class="d"><strong>Read Codex</strong><span>Same classification for sessions in other tools.</span></div></div>
+  <div class="phase"><div class="tag">Later</div><div class="d"><strong>Automatic promotion rule</strong><span>Suggest “move this task up” when the success rate and volume exceed the limit you set.</span></div></div>
 </div></section>
 </div>
 
 <footer>
   <div class="wrap">
     <div class="pill">Python</div><div class="pill">systemd</div><div class="pill">Claude Code</div>
-    <p style="margin-top:18px">Autonomy levels · free and open kit ·
+    <p style="margin-top:18px">Autonomy Levels · open and free kit ·
       <a href="https://github.com/inematds/niveis-autonomia">inematds/niveis-autonomia</a> ·
       <a href="https://inema.club">INEMA.CLUB</a></p>
   </div>

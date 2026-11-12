@@ -27,7 +27,7 @@ Detalles y criterios en [NIVEIS.md](NIVEIS.md) (en portugués).
 ## El proceso, de principio a fin
 
 1. 🧠 **Entender los niveles** (10 min): lee [NIVEIS.md](NIVEIS.md) (en portugués) o la guía.
-2. 🧠 **Imprimir la ficha**: `kit/ficha-papel.html`, A4 horizontal.
+2. 🧠 **Imprimir la ficha**: `kit/ficha-papel.es.html`, A4 horizontal.
 3. 🧠 **Anotar durante 5 días**: una línea por tarea (fecha, tarea, nivel, conexión, ¿corregí?).
 4. 🧠 **Cerrar el viernes** (5 min): sigue la guía en [kit/ficha-papel.md](kit/ficha-papel.md) (en portugués).
 5. ⚙️ **Revisar los registros**: `python3 medir/autonomia.py varrer --desde AAAA-MM-DD`.

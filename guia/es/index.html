@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Niveles de autonomía: mide lo que la IA hace sola</title>
-<meta name="description" content="Kit para medir cuánto de tu trabajo hace sola la IA, del nivel 0 (consulta) al 4 (gestiona el proceso), en papel o con registro automático.">
+<meta name="description" content="Kit para medir cuánto de tu trabajo hace la IA sola, del nivel 0 (consulta) al 4 (gestiona el proceso), en papel o con registro automático.">
 <link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/niveis-autonomia/guia/">
 <link rel="alternate" hreflang="en" href="https://inematds.github.io/niveis-autonomia/guia/en/">
 <link rel="alternate" hreflang="es" href="https://inematds.github.io/niveis-autonomia/guia/es/">
@@ -155,71 +155,73 @@
 
 <section id="resumo" class="resumo"><div class="wrap">
   <span class="chip">En resumen</span>
-  <p>Este kit te enseña a medir cuánta libertad le diste a la IA en cada tarea, en una escala de 0 a 4: desde solo responder hasta hacerse cargo sola de todo un proceso. Es para quienes usan IA en el trabajo y quieren saber qué siguen haciendo a mano y qué ya pueden delegar. Resuelve el problema de dar autonomía a ciegas, sin saber dónde acierta la IA y dónde se excede. Puedes empezar hoy con una ficha de papel; si usas Claude Code, puedes activar un registro automático que lee tus propias sesiones y anota cada conexión utilizada.</p>
+  <p>Este kit enseña a medir cuánta libertad le diste a la IA en cada tarea, en una escala del 0 al 4: desde solo responder hasta encargarse sola de todo un proceso. Sirve para quienes usan IA en el trabajo y quieren saber qué siguen haciendo a mano y qué ya pueden delegar. Resuelve el problema de dar autonomía a ciegas, sin saber dónde acierta la IA y dónde se excede. Puedes empezar hoy con una ficha en papel; si usas Claude Code, puedes activar un registro automático que lee tus propias sesiones y anota cada conexión utilizada.</p>
   <figure style="margin:26px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="../assets/banner-grade-es.jpg" alt="Banner: consulta, sugiere, actúa con aprobación, actúa y avisa, gestiona" loading="lazy" style="width:100%;display:block"></figure>
 </div></section>
 
 <section id="niveis"><div class="wrap">
   <span class="chip">Los 5 niveles</span>
-  <h2>La autonomía no se regala, se gana</h2>
+  <h2>La autonomía no se regala: se gana</h2>
   <p class="sub">El nivel corresponde a una tarea, no a toda la IA. La misma IA puede estar en el nivel 3 para organizar archivos y en el nivel 1 para escribirle a tu cliente.</p>
 
-  <div class="nivel"><div class="n">0</div><div><h3>Consulta</h3><p><b>La IA:</b> responde sin tocar nada.</p><p><b>Tú:</b> decides y haces todo.</p></div></div>
-  <div class="nivel"><div class="n">1</div><div><h3>Sugiere</h3><p><b>La IA:</b> investiga, lee y prepara el borrador o el plan. No cambia nada.</p><p><b>Tú:</b> aplicas la sugerencia.</p></div></div>
-  <div class="nivel"><div class="n">2</div><div><h3>Actúa con aprobación</h3><p><b>La IA:</b> modifica archivos y ejecuta comandos, un paso a la vez.</p><p><b>Tú:</b> apruebas cada paso.</p></div></div>
-  <div class="nivel"><div class="n">3</div><div><h3>Actúa y avisa</h3><p><b>La IA:</b> ejecuta sola dentro de ciertos límites y te avisa cuando termina.</p><p><b>Tú:</b> revisas el resultado después.</p></div></div>
-  <div class="nivel"><div class="n">4</div><div><h3>Gestiona el proceso</h3><p><b>La IA:</b> ejecuta todo el proceso, incluso lo que sale de tu máquina (publicar, enviar, subir). Solo te llama si hay una excepción.</p><p><b>Tú:</b> defines la regla, revisas el informe y atiendes la excepción.</p></div></div>
+  <div class="nivel"><div class="n">0</div><div><h3>Consulta</h3><p><b>La IA:</b> responde, sin tocar nada.</p><p><b>Tú:</b> decides y haces todo.</p><p class="mut"><b>Ejemplo, responder el correo de un cliente:</b> la IA explica cómo responder; tú escribes y lo envías.</p></div></div>
+  <div class="nivel"><div class="n">1</div><div><h3>Sugiere</h3><p><b>La IA:</b> investiga, lee y prepara el borrador o el plan. No cambia nada.</p><p><b>Tú:</b> aplicas la sugerencia.</p><p class="mut"><b>Ejemplo:</b> la IA escribe el borrador; tú lo copias, lo ajustas y lo envías.</p></div></div>
+  <div class="nivel"><div class="n">2</div><div><h3>Actúa con aprobación</h3><p><b>La IA:</b> modifica archivos y ejecuta comandos, un paso a la vez.</p><p><b>Tú:</b> apruebas cada paso.</p><p class="mut"><b>Ejemplo:</b> la IA deja el correo listo en tu bandeja de salida; tú apruebas cada envío.</p></div></div>
+  <div class="nivel"><div class="n">3</div><div><h3>Actúa y avisa</h3><p><b>La IA:</b> ejecuta sola dentro de ciertos límites y te avisa cuando termina.</p><p><b>Tú:</b> revisas el resultado después.</p><p class="mut"><b>Ejemplo:</b> la IA responde los correos habituales y te envía un resumen al final del día.</p></div></div>
+  <div class="nivel"><div class="n">4</div><div><h3>Gestiona el proceso</h3><p><b>La IA:</b> ejecuta todo el proceso, incluso lo que sale de tu equipo (publicar, enviar, subir). Solo te contacta cuando hay una excepción.</p><p><b>Tú:</b> defines la regla, revisas el informe y atiendes la excepción.</p><p class="mut"><b>Ejemplo:</b> la IA se encarga de toda la bandeja de entrada de atención al cliente (responde, reenvía, agenda) y solo te contacta cuando algo no entra en las reglas.</p></div></div>
 
-  <div class="box"><p><b>El error que nadie nota hasta que todo se descontrola:</b> soltarle todo desde el principio en el nivel 4. La IA se equivoca despacio y en silencio, y solo te enteras cuando el daño ya está hecho. Por eso se sube un nivel a la vez, una tarea a la vez.</p></div>
-  <p class="mut">Los extremos (0 y 4) vienen del video "5 Níveis de Autonomia da IA que Quase Ninguém Usa" (en portugués). Los niveles 1 a 3 se redactaron para este kit para que se puedan medir.</p>
+  <div class="box"><p><b>Si tienes dudas, hazte tres preguntas:</b> ¿La IA modificó algo o solo respondió? ¿Te pidió aprobación antes? ¿Estuviste presente mientras lo hacía? Si no modificó nada, es nivel 0 o 1. Si modificó algo y pidió aprobación, es nivel 2. Si modificó algo sola y te avisó, es nivel 3. Si gestionó todo el proceso y solo te contactó ante una excepción, es nivel 4.</p></div>
+  <div class="box"><p><b>El error que nadie nota hasta que todo se complica:</b> soltarlo todo en el nivel 4 desde el principio. La IA se equivoca poco a poco y en silencio, y solo te enteras cuando el daño ya está hecho. Por eso se sube un nivel a la vez, una tarea a la vez.</p></div>
+  <p class="mut">Los extremos (0 y 4) vienen del video "5 Níveis de Autonomia da IA que Quase Ninguém Usa" (en portugués). Los niveles 1 a 3 se redactaron para este kit, para que se puedan medir.</p>
 </div></section>
 
 <section id="medir"><div class="wrap">
   <span class="chip">Cómo medir</span>
   <h2>Solo puedes subir lo que puedes ver</h2>
-  <p class="sub">Sin registro, la autonomía es una suposición. Con registro, ves qué sigues haciendo a mano, qué ya hace sola la IA y qué puertas le abriste.</p>
+  <p class="sub">Sin registro, la autonomía es una suposición. Con un registro, ves lo que todavía haces a mano, lo que la IA ya hace sola y qué puertas le abriste.</p>
   <div class="grid g2">
-    <div class="card"><h3>📝 En papel</h3><p>Una ficha para imprimir. Por cada tarea que hizo la IA: fecha, tarea, nivel del 0 al 4, qué conexión usó (carpeta, correo, agenda, sitio...) y si tuviste que corregirla. Puedes empezar hoy, sin instalar nada y con cualquier IA.</p></div>
-    <div class="card"><h3>🤖 Automático</h3><p>Un programa lee los registros de tus sesiones con Claude Code, clasifica cada una del 0 al 4 y anota todas las conexiones utilizadas. Se ejecuta solo todos los días y acumula el historial.</p></div>
+    <div class="card"><h3>📝 En papel</h3><p>Una ficha para imprimir. Por cada tarea que hizo la IA: fecha, tarea, nivel del 0 al 4, qué conexión usó (carpeta, correo, agenda, sitio...) y si tuviste que corregirla. Puedes empezar hoy, sin instalar nada, con cualquier IA.</p></div>
+    <div class="card"><h3>🤖 Automático</h3><p>Un programa lee los registros de tus sesiones con Claude Code, clasifica cada una del 0 al 4 y anota todas las conexiones utilizadas. Se ejecuta solo cada día y va acumulando el historial.</p></div>
   </div>
-  <div class="box"><p><b>El papel y el programa usan las mismas columnas.</b> Puedes empezar en papel y pasar al registro automático cuando quieras, sin perder lo que ya anotaste.</p></div>
+  <div class="box"><p><b>El papel y el programa usan las mismas columnas.</b> Puedes empezar en papel y, cuando quieras, pasar al registro automático sin perder lo que ya anotaste.</p></div>
   <h3 style="margin-top:2em">Cuatro preguntas que responde la medición</h3>
   <table class="t">
     <tr><th>Pregunta</th><th>Dónde aparece</th></tr>
-    <tr><td>¿Qué sigo haciendo a mano que podría hacer la IA?</td><td>Tareas repetidas 3 veces o más en los niveles 0 a 2</td></tr>
-    <tr><td>¿Qué ya hace sola la IA y ni lo recordaba?</td><td>Rutinas sin nadie en la conversación, en los niveles 3 y 4</td></tr>
+    <tr><td>¿Qué sigo haciendo a mano que la IA podría hacer?</td><td>Tareas repetidas 3 veces o más en los niveles 0 a 2</td></tr>
+    <tr><td>¿Qué cosas ya hace sola la IA y ni recordaba?</td><td>Rutinas sin nadie en la conversación, en los niveles 3 y 4</td></tr>
     <tr><td>¿Qué puertas le abrí?</td><td>Lista de conexiones, con la primera y la última vez que se usaron</td></tr>
-    <tr><td>¿Dónde se equivocó después de que la solté?</td><td>Columna "tuve que corregir" de la ficha</td></tr>
+    <tr><td>¿En qué se equivocó después de que la dejé actuar?</td><td>Columna "necesitó corrección" de la ficha</td></tr>
   </table>
 </div></section>
 
 <section id="resultado"><div class="wrap">
   <span class="chip">Qué mostró la medición</span>
   <h2>Un caso real: 14 días de trabajo de una sola persona</h2>
-  <p class="sub">Medición automática de los registros de Claude Code del autor de este kit, del 29/10 al 12/11/2026. Solo números agregados (archivo <code>exemplo/relatorio-agregado-2026-11-12.json</code>); no se publicó ningún contenido.</p>
+  <p class="sub">Medición automática de los registros de Claude Code del autor de este kit, del 29 de octubre al 12 de noviembre de 2026. Solo se publicaron cifras agregadas (archivo <a href="https://github.com/inematds/niveis-autonomia/blob/main/exemplo/relatorio-agregado-2026-11-12.json"><code>exemplo/relatorio-agregado-2026-11-12.json</code></a>); no se publicó ningún contenido.</p>
   <div class="grid g3">
     <div class="card"><div class="big">2.453</div><p>sesiones registradas en 14 días.</p></div>
     <div class="card"><div class="big">171</div><p>con la persona en la conversación (terminal o Telegram). De estas, el 71% quedó en el nivel 3 y el 25% en el nivel 2.</p></div>
-    <div class="card"><div class="big">2.282</div><p>se ejecutaron sin nadie en la conversación (rutinas, timers, pipelines). El 12% llegó al nivel 4 y representó el 40% de las acciones que producen cambios.</p></div>
+    <div class="card"><div class="big">2.282</div><p>se ejecutaron sin que nadie escribiera: son rutinas automáticas que se activan a una hora y siguen solas. El 12% llegó al nivel 4 y representó el 40% de todo lo que modificó la IA (archivos, comandos, envíos).</p></div>
   </div>
-  <div class="box"><p><b>Lo que enseñó:</b> mezclar ambas cosas lleva a engaño. En el primer recuento, la mitad de las sesiones parecía "solo consulta" (nivel 0). Eran pasos cortos de pipelines automáticos, sin herramientas. Separar "contigo" de "sin ti" cambió por completo la interpretación.</p></div>
-  <div class="box"><p><b>Una limitación honesta:</b> el nivel muestra cuánta libertad tuvo la IA, no si acertó. Además, el programa solo ve Claude Code; las llamadas a API que se hacen dentro de un script aparecen solo como "script", sin el nombre del servicio.</p></div>
+  <div class="box"><p><b>Lo que nos enseñó:</b> mezclar ambas cosas lleva a conclusiones engañosas. En el primer recuento, la mitad de las sesiones parecía ser de "solo consulta" (nivel 0). Eran pasos breves de rutinas automáticas, en los que la IA solo respondió. Separar las sesiones "contigo" de las sesiones "sin ti" cambió por completo la interpretación.</p></div>
+  <div class="box"><p><b>Una limitación que conviene tener presente:</b> el nivel muestra cuánta libertad tuvo la IA, no si acertó. Además, el programa solo puede ver Claude Code.</p></div>
+  <div class="box"><p><b>No te compares con estas cifras.</b> El autor es técnico y deja muchas cosas funcionando solas. Quien está empezando, como el dueño de una agencia, debería tener la mayor parte del uso en los niveles 1 y 2, y eso es lo esperado: lo importante es medir tu punto de partida.</p></div>
 </div></section>
 
 <section id="plano"><div class="wrap">
   <span class="chip">Plan de acción</span>
   <h2>Tu primera semana</h2>
   <p class="sub">Cinco pasos, sin instalar nada hasta el cuarto.</p>
-  <div class="step"><div class="b">1</div><div><h3>Imprime la ficha</h3><p>Abre <a href="https://inematds.github.io/niveis-autonomia/kit/ficha-papel.html"><code>kit/ficha-papel.html</code></a> e imprímela en una hoja A4 apaisada. Pégala cerca de la computadora.</p></div></div>
-  <div class="step"><div class="b">2</div><div><h3>Toma notas durante 5 días</h3><p>Una línea por cada tarea que hizo la IA. Verbo más objeto ("resumir contrato", "responder correo"). Marca el nivel y la conexión.</p></div></div>
-  <div class="step"><div class="b">3</div><div><h3>Cierra el viernes en 5 minutos</h3><p>Cuenta las líneas por nivel. Una tarea repetida 3 veces en los niveles 0 a 2 puede subir. Una tarea en los niveles 3 o 4 que tuviste que corregir más de 1 vez de cada 10 baja un nivel.</p></div></div>
-  <div class="step"><div class="b">4</div><div><h3>Si usas Claude Code, activa el registro automático</h3><p>Consulta la parte técnica más abajo. Solo toma unos minutos y, a partir de ahí, mide automáticamente.</p></div></div>
+  <div class="step"><div class="b">1</div><div><h3>Imprime la ficha</h3><p>Abre <a href="https://inematds.github.io/niveis-autonomia/kit/ficha-papel.es.html"><code>kit/ficha-papel.es.html</code></a> e imprímela en A4 apaisado. Pégala cerca de la computadora.</p></div></div>
+  <div class="step"><div class="b">2</div><div><h3>Anota durante 5 días</h3><p>Una línea por cada tarea que hizo la IA. Verbo más objeto ("resumir contrato", "responder correo"). Marca el nivel y la conexión.</p></div></div>
+  <div class="step"><div class="b">3</div><div><h3>Haz el recuento del viernes en 5 minutos</h3><p>Cuenta las filas de cada nivel. Una tarea repetida 3 veces en los niveles 0 a 2 puede subir. Si corregiste una tarea de nivel 3 o 4 más de 1 vez de cada 10, bájala un nivel.</p></div></div>
+  <div class="step"><div class="b">4</div><div><h3>Si usas Claude Code, activa el registro automático</h3><p>Consulta la parte técnica de abajo. Toma unos minutos y, a partir de ahí, mide automáticamente.</p></div></div>
   <div class="step"><div class="b">5</div><div><h3>Sube una tarea, no todas</h3><p>Elige la tarea más repetida y más segura. Súbela un nivel. Vuelve a medir la semana siguiente.</p></div></div>
 </div></section>
 
 <div id="tecnico" class="techhead"><div class="wrap">
   <span class="chip">Parte técnica</span>
-  <h2>El kit: para quienes quieren el registro automático</h2>
+  <h2>El kit: para quienes quieren un registro automático</h2>
   <p>No necesitas esta parte para entender lo anterior.</p>
 </div></div>
 
@@ -228,9 +230,9 @@
   <span class="chip">Qué incluye el kit</span>
   <h2>Tres piezas</h2>
   <div class="grid g3">
-    <div class="card"><h3>medir/autonomia.py</h3><p>Programa en Python, sin dependencias. Recorre los registros, clasifica, genera informes y lista las conexiones. Solo lee archivos locales.</p></div>
-    <div class="card"><h3>kit/ficha-papel</h3><p>La ficha para imprimir y la guía para el cierre semanal.</p></div>
-    <div class="card"><h3>systemd/</h3><p>Temporizador diario que mantiene el registro al día sin que tengas que acordarte.</p></div>
+    <div class="card"><h3>medir/autonomia.py</h3><p>Programa en Python, sin dependencias. Recorre, clasifica, genera informes y enumera conexiones. Solo lee archivos locales.</p></div>
+    <div class="card"><h3>kit/ficha-papel</h3><p>La ficha para imprimir y la guía para el recuento semanal.</p></div>
+    <div class="card"><h3>systemd/</h3><p>Temporizador diario que mantiene actualizado el registro sin que tengas que recordarlo.</p></div>
   </div>
 </div></section>
 
@@ -238,30 +240,31 @@
   <span class="chip">Cómo funciona</span>
   <h2>Del registro a la decisión</h2>
   <div class="flow">
-    <span>Registros de las sesiones</span><span class="arr">→</span>
+    <span>Registros de sesiones</span><span class="arr">→</span>
     <span>Contar mensajes y acciones</span><span class="arr">→</span>
     <span>Leer el modo de permisos</span><span class="arr">→</span>
-    <span>Nivel 0 a 4</span><span class="arr">→</span>
+    <span>Nivel del 0 al 4</span><span class="arr">→</span>
     <span>Registro + informe</span>
   </div>
   <table class="t">
     <tr><th>Señal en el registro</th><th>Cómo se aplica la regla</th></tr>
     <tr><td>No se usó ninguna herramienta</td><td>Nivel 0</td></tr>
-    <tr><td>Solo lectura (leer, buscar, listar)</td><td>Nivel 1</td></tr>
-    <tr><td>Cambió algo y el modo pide aprobación</td><td>Nivel 2</td></tr>
-    <tr><td>Cambió algo sin pedir aprobación, varias acciones por cada mensaje tuyo</td><td>Nivel 3</td></tr>
-    <tr><td>Como máximo 1 mensaje tuyo, 15 acciones o más y al menos 1 efecto fuera de la máquina</td><td>Nivel 4</td></tr>
+    <tr><td>Solo lectura (leer, buscar, enumerar)</td><td>Nivel 1</td></tr>
+    <tr><td>Modificó algo y el modo pide aprobación</td><td>Nivel 2</td></tr>
+    <tr><td>Modificó algo, no pidió aprobación y realizó varias acciones por cada mensaje tuyo</td><td>Nivel 3</td></tr>
+    <tr><td>Como máximo 1 mensaje tuyo, 15 acciones o más y al menos 1 efecto fuera del equipo</td><td>Nivel 4</td></tr>
     <tr><td>Se ejecutó sin terminal y sin ti en la conversación</td><td>Se separa como "sin ti" (rutinas)</td></tr>
   </table>
-  <p class="mut">Los límites (15 acciones, 3 acciones por mensaje) están en un solo diccionario <code>LIM</code> en el código, para que puedas calibrarlos.</p>
+  <p class="mut">Los límites (15 acciones, 3 acciones por mensaje) están en un único diccionario <code>LIM</code> del código, para que puedas ajustarlos.</p>
 </div></section>
 
 <section id="pre"><div class="wrap">
-  <span class="chip">Requisitos previos</span>
+  <span class="chip">Requisitos</span>
   <h2>Qué necesitas</h2>
-  <div class="grid g2">
+  <div class="grid g3">
     <div class="card"><h3>Python 3.9 o posterior</h3><p>Solo la biblioteca estándar. No hay que instalar nada.</p><pre><span class="k">python3</span> --version</pre></div>
-    <div class="card"><h3>Claude Code con historial</h3><p>El programa lee <code>~/.claude/projects</code>. Si no hay sesiones allí, no hay nada que medir. Para el registro en papel sirve cualquier IA.</p></div>
+    <div class="card"><h3>Linux o Mac, con git</h3><p>El registro automático funciona en cualquier sistema con Python. El temporizador diario usa systemd, que es de Linux; en Mac, ejecuta el comando <code>varrer</code> a mano o usa el programador de tareas de tu sistema. Windows: usa el papel o WSL.</p></div>
+    <div class="card"><h3>Claude Code con historial</h3><p>El programa lee <code>~/.claude/projects</code>. Si no hay sesiones ahí, no hay nada que medir. En papel, sirve cualquier IA.</p></div>
   </div>
 </div></section>
 
@@ -271,39 +274,39 @@
   <div class="step"><div class="b">1</div><div><h3>Descarga el kit</h3><p>Clona el repositorio.</p>
 <pre><span class="k">git clone</span> <span class="s">https://github.com/inematds/niveis-autonomia</span>
 <span class="k">cd</span> niveis-autonomia</pre></div></div>
-  <div class="step"><div class="b">2</div><div><h3>Recorre los registros</h3><p>La primera vez lee los últimos 30 días; las siguientes, solo lo que cambió.</p>
-<pre><span class="k">python3</span> medir/autonomia.py varrer --desde 2026-10-15  <span class="c"># troque pela data que quiser</span></pre></div></div>
-  <div class="step"><div class="b">3</div><div><h3>Consulta el informe</h3><p>Distribución por nivel, separada en "contigo" y "sin ti", tareas repetidas y conexiones.</p>
+  <div class="step"><div class="b">2</div><div><h3>Recorre los registros</h3><p>La primera vez lee los últimos 30 días; después, solo lee lo que cambió.</p>
+<pre><span class="k">python3</span> medir/autonomia.py varrer --desde $(date -d <span class="s">"-30 days"</span> +%F)  <span class="c"># últimos 30 días</span></pre></div></div>
+  <div class="step"><div class="b">3</div><div><h3>Consulta el informe</h3><p>Distribución por nivel, separada entre sesiones "contigo" y "sin ti", tareas repetidas y conexiones.</p>
 <pre><span class="k">python3</span> medir/autonomia.py relatorio</pre></div></div>
-  <div class="step"><div class="b">4</div><div><h3>Lista las conexiones</h3><p>Todo lo que tocó la IA: herramientas de línea de comandos, servidores MCP, skills, agentes y sitios.</p>
+  <div class="step"><div class="b">4</div><div><h3>Enumera las conexiones</h3><p>Todo lo que tocó la IA: herramientas de línea de comandos, servidores MCP, skills, agentes y sitios.</p>
 <pre><span class="k">python3</span> medir/autonomia.py conexoes
-<span class="k">python3</span> medir/autonomia.py inventario  <span class="c"># o que está configurado x o que foi usado (só nomes)</span></pre></div></div>
-  <div class="step"><div class="b">5</div><div><h3>Déjalo ejecutándose solo</h3><p>Instala un temporizador de usuario (sin sudo) que recorre los registros todos los días a las 06:10 y guarda <code>registro/ultimo-relatorio.md</code>.</p>
+<span class="k">python3</span> medir/autonomia.py inventario  <span class="c"># qué está configurado y qué se usó (solo nombres)</span></pre></div></div>
+  <div class="step"><div class="b">5</div><div><h3>Déjalo funcionando solo</h3><p>Instala un temporizador para tu usuario (sin sudo) que recorre los registros todos los días a las 06:10 y guarda <code>registro/ultimo-relatorio.md</code>.</p>
 <pre><span class="k">sh</span> systemd/instalar.sh
-<span class="c"># para desligar:</span>
+<span class="c"># para desactivarlo:</span>
 <span class="k">systemctl</span> --user disable --now niveis-autonomia.timer</pre></div></div>
-  <div class="step"><div class="b">6</div><div><h3>Prueba la regla</h3><p>14 pruebas cubren los 5 niveles, el modo de permisos, Telegram y las rutinas.</p>
+  <div class="step"><div class="b">6</div><div><h3>Prueba la regla</h3><p>14 pruebas cubren los 5 niveles, el modo de permisos y la separación entre sesiones con y sin una persona.</p>
 <pre><span class="k">python3</span> -I -m unittest discover -s tests</pre></div></div>
-  <div class="box"><p><b>Privacidad:</b> todo se ejecuta en tu máquina, sin llamar a ninguna API. El registro queda en <code>registro/</code>, fuera de git, con recuentos y una etiqueta breve de la tarea. El inventario solo incluye nombres, nunca claves ni direcciones.</p></div>
+  <div class="box"><p><b>Privacidad:</b> todo se ejecuta en tu equipo, sin llamar a ninguna API. El registro queda en <code>registro/</code>, fuera de git, con recuentos y una etiqueta breve de la tarea. El inventario solo enumera nombres, nunca claves ni direcciones.</p></div>
 </div></section>
 
 <section id="limites"><div class="wrap">
   <span class="chip">Límites</span>
-  <h2>Qué no ve la medición</h2>
+  <h2>Lo que la medición no ve</h2>
   <ul class="mut" style="line-height:1.9">
     <li>Si aprobaste en el prompt: solo ve el modo de permisos de la sesión.</li>
-    <li>Una llamada a API desde un script: aparece como <code>bash:python3</code>, sin el nombre del servicio.</li>
+    <li>Una llamada a una API desde un script: aparece como <code>bash:python3</code>, sin el nombre del servicio.</li>
     <li>Otras herramientas además de Claude Code (por ejemplo, Codex): no las lee.</li>
-    <li>Calidad: el nivel mide la libertad, no si acertó. Los aciertos se reflejan en la columna "tuve que corregir" de la ficha.</li>
+    <li>Calidad: el nivel mide la libertad, no si acertó. Los aciertos se anotan en la columna "necesitó corrección" de la ficha.</li>
   </ul>
 </div></section>
 
 <section id="roadmap"><div class="wrap">
   <span class="chip">Hoja de ruta</span>
   <h2>Qué viene después</h2>
-  <div class="phase"><div class="tag">Ahora</div><div class="d"><strong>Claude Code + ficha de papel</strong><span>Clasificación por sesión, conexiones, inventario y temporizador diario.</span></div></div>
+  <div class="phase"><div class="tag">Ahora</div><div class="d"><strong>Claude Code + ficha en papel</strong><span>Clasificación por sesión, conexiones, inventario y temporizador diario.</span></div></div>
   <div class="phase"><div class="tag">Próximo</div><div class="d"><strong>Leer Codex</strong><span>La misma clasificación para las sesiones de otras herramientas.</span></div></div>
-  <div class="phase"><div class="tag">Después</div><div class="d"><strong>Regla de promoción automática</strong><span>Sugerir "sube esta tarea" cuando la tasa de aciertos y el volumen superen el límite que definas.</span></div></div>
+  <div class="phase"><div class="tag">Después</div><div class="d"><strong>Regla de promoción automática</strong><span>Sugerir "sube esta tarea" cuando la tasa de acierto y el volumen superen el límite que definas.</span></div></div>
 </div></section>
 </div>
 

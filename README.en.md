@@ -27,7 +27,7 @@ Details and criteria in [NIVEIS.md](NIVEIS.md) (in Portuguese).
 ## The process, from start to finish
 
 1. 🧠 **Understand the levels** (10 min): read [NIVEIS.md](NIVEIS.md) (in Portuguese) or the guide.
-2. 🧠 **Print the form**: `kit/ficha-papel.html`, landscape A4.
+2. 🧠 **Print the form**: `kit/ficha-papel.en.html`, landscape A4.
 3. 🧠 **Take notes for 5 days**: one line per task (date, task, level, connection, did I correct it?).
 4. 🧠 **Wrap up on Friday** (5 min): instructions in [kit/ficha-papel.md](kit/ficha-papel.md) (in Portuguese).
 5. ⚙️ **Scan the records**: `python3 medir/autonomia.py varrer --desde AAAA-MM-DD`.

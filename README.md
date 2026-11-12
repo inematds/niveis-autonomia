@@ -27,7 +27,7 @@ Detalhe e critérios em [NIVEIS.md](NIVEIS.md).
 ## O processo, do início ao fim
 
 1. 🧠 **Entender os níveis** (10 min): leia [NIVEIS.md](NIVEIS.md) ou o guia.
-2. 🧠 **Imprimir a ficha**: `kit/ficha-papel.html`, A4 deitado.
+2. 🧠 **Imprimir a ficha**: `kit/ficha-papel.html` (também `.en.html` e `.es.html`), A4 deitado.
 3. 🧠 **Anotar por 5 dias**: uma linha por tarefa (data, tarefa, nível, conexão, corrigi?).
 4. 🧠 **Fechar a sexta (5 min)**: roteiro em [kit/ficha-papel.md](kit/ficha-papel.md).
 5. ⚙️ **Varrer os registros**: `python3 medir/autonomia.py varrer --desde AAAA-MM-DD`.
