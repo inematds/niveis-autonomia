@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Níveis de autonomia: meça o que a IA faz sozinha</title>
-<meta name="description" content="Kit para medir quanto do seu trabalho a IA faz sozinha, do nível 0 (consulta) ao 4 (gerencia o processo), no papel ou com registro automático.">
+<title>Níveis de autonomia AL1–AL5: meça o que a IA faz sozinha</title>
+<meta name="description" content="Kit niveis-autonomia: meça quanta liberdade você deu à IA, na escada AL1 (você faz sozinho) a AL5 (a IA roda sozinha), no papel ou com registro automático, e veja onde precisa do gatilho de chamar humano.">
 <link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/niveis-autonomia/guia/">
 <link rel="alternate" hreflang="en" href="https://inematds.github.io/niveis-autonomia/guia/en/">
 <link rel="alternate" hreflang="es" href="https://inematds.github.io/niveis-autonomia/guia/es/">
@@ -105,7 +105,7 @@
   .techzone{background:var(--bg2)} .techzone section{border-color:var(--line)}
   .nivel{display:grid;grid-template-columns:54px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
   .nivel:last-child{border:none}
-  .nivel .n{width:54px;height:54px;border-radius:14px;background:var(--amb);color:#1a1206;font:800 1.5rem Sora;display:flex;align-items:center;justify-content:center}
+  .nivel .n{width:54px;height:54px;border-radius:14px;background:var(--amb);color:#1a1206;font:800 1.15rem Sora;display:flex;align-items:center;justify-content:center}
   .nivel h3{font-size:1.1rem;margin-bottom:.25em} .nivel p{margin:.15em 0;color:var(--mut);font-size:.95rem} .nivel p b{color:var(--txt)}
   table.t{width:100%;border-collapse:collapse;font-size:.92rem;margin:1em 0}
   table.t th,table.t td{border-bottom:1px solid var(--line);padding:.6em .7em;text-align:left}
@@ -126,7 +126,8 @@
     <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
   </span>
   <div class="links">
-    <a class="sec" href="#niveis">Os 5 níveis</a>
+    <a class="sec" href="#niveis">A escada AL1–AL5</a>
+    <a class="sec" href="#gatilho">Gatilho de chamar humano</a>
     <a class="sec" href="#medir">Como medir</a>
     <a class="sec" href="#resultado">O que a medição mostrou</a>
     <a class="sec" href="#plano">Plano de ação</a>
@@ -142,44 +143,51 @@
   <div class="wrap">
     <div>
       <span class="chip">Kit · meça o que a IA faz sozinha</span>
-      <h1>Os 5 níveis de <span class="amb">autonomia</span> da IA no seu trabalho</h1>
-      <p class="lead">Do nível 0 (só consulta) ao 4 (gerencia o processo inteiro). Meça no papel ou deixe um programa registrar por você.</p>
+      <h1>Quanta <span class="amb">liberdade</span> você já deu à IA? Meça de AL1 a AL5</h1>
+      <p class="lead">A IA que roda sozinha erra em silêncio, e você só descobre quando o estrago já está feito. O kit <b>niveis-autonomia</b> mede, de AL1 (você faz sozinho) a AL5 (a IA roda sozinha), quanta liberdade você deu a ela em cada tarefa e mostra onde falta o gatilho que chama você na exceção. No papel ou automático.</p>
       <div class="cta">
         <a class="btn" href="#niveis">Entender em 5 minutos</a>
         <a class="btn ghost" href="https://github.com/inematds/niveis-autonomia" target="_blank" rel="noopener">Ver no GitHub</a>
       </div>
     </div>
-    <figure><img src="assets/banner.jpg" alt="Banner: níveis de autonomia, do 0 ao 4"></figure>
+    <figure><img src="assets/banner.jpg" alt="Banner: escada de autonomia, do AL1 ao AL5"></figure>
   </div>
 </header>
 
 <section id="resumo" class="resumo"><div class="wrap">
   <span class="chip">Em resumo</span>
-  <p>Este kit ensina a medir quanta liberdade você deu à IA em cada tarefa, numa escala de 0 a 4: de só responder até cuidar de um processo inteiro sozinha. Serve para quem usa IA no trabalho e quer saber o que ainda faz na mão e o que já pode entregar. Resolve o problema de dar autonomia no escuro, sem saber onde a IA acerta e onde estoura. Você começa hoje com uma ficha de papel; quem usa o Claude Code pode ligar um registro automático que lê as próprias sessões e anota cada conexão usada.</p>
-  <figure style="margin:26px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="Banner: consulta, sugere, com aprovação, faz e avisa, gerencia" loading="lazy" style="width:100%;display:block"></figure>
+  <p>Este kit ensina a medir quanta liberdade você deu à IA em cada tarefa, na escada AL1 a AL5: do AL1, em que você faz sozinho, ao AL5, em que a IA cuida de um processo inteiro sozinha. É a mesma escada do kit <a href="https://inematds.github.io/nivel-ia/guia/">nivel-ia</a>; este aqui olha a liberdade: o modo de permissão, o que a IA mexeu fora da sua máquina e onde precisa existir o gatilho de chamar humano. Serve para quem usa IA no trabalho e quer saber o que ainda faz na mão e o que já pode entregar. Resolve o problema de dar autonomia no escuro, sem saber onde a IA acerta e onde estoura. Você começa hoje com uma ficha de papel; quem usa o Claude Code pode ligar um registro automático que lê as próprias sessões e anota cada conexão usada.</p>
+  <figure style="margin:26px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="Banner: AL1 você sozinho, AL2 ajuda, AL3 colabora, AL4 conduz, AL5 roda sozinha" loading="lazy" style="width:100%;display:block"></figure>
 </div></section>
 
-<section id="video"><div class="wrap">
-  <span class="chip">Vídeo</span>
-  <h2>Entenda em 2 minutos</h2>
-  <p class="sub">Os 5 níveis e como medir, em vídeo.</p>
-  <div style="position:relative;padding-top:56.25%;border-radius:16px;overflow:hidden;border:1px solid var(--line)"><iframe src="https://www.youtube.com/embed/HZOnICu6ILI" title="Entenda em 2 minutos" style="position:absolute;inset:0;width:100%;height:100%;border:0" loading="lazy" allowfullscreen></iframe></div>
-</div></section>
+<!-- VIDEO: entra o explicavideo novo (AL1–AL5, com avatar) quando publicado -->
 
 <section id="niveis"><div class="wrap">
-  <span class="chip">Os 5 níveis</span>
+  <span class="chip">A escada AL1–AL5</span>
   <h2>Autonomia não se dá de graça: se conquista</h2>
-  <p class="sub">O nível é de uma tarefa, não da IA inteira. A mesma IA pode estar no nível 3 para organizar arquivos e no nível 1 para escrever ao seu cliente.</p>
+  <p class="sub">O degrau é de uma tarefa, não da IA inteira. A mesma IA pode estar no AL5 para traduzir legendas e no AL2 para escrever ao seu cliente.</p>
 
-  <div class="nivel"><div class="n">0</div><div><h3>Consulta</h3><p><b>A IA:</b> responde, sem tocar em nada.</p><p><b>Você:</b> decide e faz tudo.</p><p class="mut"><b>Exemplo, responder o e-mail de um cliente:</b> a IA explica como responder; você escreve e envia.</p></div></div>
-  <div class="nivel"><div class="n">1</div><div><h3>Sugere</h3><p><b>A IA:</b> pesquisa, lê e monta o rascunho ou o plano. Não altera nada.</p><p><b>Você:</b> aplica a sugestão.</p><p class="mut"><b>Exemplo:</b> a IA escreve o rascunho; você copia, ajusta e envia.</p></div></div>
-  <div class="nivel"><div class="n">2</div><div><h3>Faz com aprovação</h3><p><b>A IA:</b> altera arquivos e roda comandos, um passo por vez.</p><p><b>Você:</b> aprova cada passo.</p><p class="mut"><b>Exemplo:</b> a IA deixa o e-mail pronto na sua caixa de saída; você aprova cada envio.</p></div></div>
-  <div class="nivel"><div class="n">3</div><div><h3>Faz e avisa</h3><p><b>A IA:</b> executa sozinha dentro de limites e avisa quando termina.</p><p><b>Você:</b> revisa o resultado depois.</p><p class="mut"><b>Exemplo:</b> a IA responde os e-mails de rotina e manda um resumo no fim do dia.</p></div></div>
-  <div class="nivel"><div class="n">4</div><div><h3>Gerencia o processo</h3><p><b>A IA:</b> roda o processo inteiro, inclusive o que sai da sua máquina (publicar, enviar, subir). Só chama você na exceção.</p><p><b>Você:</b> define a regra, olha o relatório e atende a exceção.</p><p class="mut"><b>Exemplo:</b> a IA cuida de toda a caixa de entrada do atendimento (responde, encaminha, agenda) e só chama você nos casos fora da regra.</p></div></div>
+  <div class="nivel"><div class="n">AL1</div><div><h3>Você faz sozinho</h3><p><b>A IA:</b> não entra.</p><p><b>Você:</b> faz tudo.</p><p class="mut"><b>Exemplo, responder o e-mail de um cliente:</b> você lê, pensa, escreve e envia.</p></div></div>
+  <div class="nivel"><div class="n">AL2</div><div><h3>A IA ajuda</h3><p><b>A IA:</b> responde, pesquisa, sugere. Não mexe em nada.</p><p><b>Você:</b> decide e executa.</p><p class="mut"><b>Exemplo:</b> você pergunta "como respondo isso?" e escreve a resposta.</p></div></div>
+  <div class="nivel"><div class="n">AL3</div><div><h3>A IA colabora</h3><p><b>A IA:</b> trabalha junto com você, passo a passo.</p><p><b>Você:</b> conduz cada passo.</p><p class="mut"><b>Exemplo:</b> a IA escreve o rascunho com você; você ajusta e envia.</p></div></div>
+  <div class="nivel"><div class="n">AL4</div><div><h3>A IA conduz, você revisa</h3><p><b>A IA:</b> prepara tudo, inclusive o que vai sair para fora.</p><p><b>Você:</b> confere antes de sair.</p><p class="mut"><b>Exemplo:</b> a IA deixa a resposta pronta; você lê, aprova e ela envia.</p></div></div>
+  <div class="nivel"><div class="n">AL5</div><div><h3>A IA roda sozinha</h3><p><b>A IA:</b> roda o processo inteiro, com horário, regra e alarme, inclusive o que sai da sua máquina. Tarefa crítica (publicar, cliente, pagamento, e-mail) para no AL4.</p><p><b>Você:</b> define a regra, lê o resumo e atende a exceção.</p><p class="mut"><b>Exemplo:</b> as legendas dos vídeos são traduzidas sozinhas toda noite; o arquivo fora do padrão dispara o alarme e chega para você.</p></div></div>
 
-  <div class="box"><p><b>Em dúvida, pergunte três coisas:</b> a IA mexeu em algo, ou só respondeu? Ela pediu a minha aprovação antes? Eu estava presente enquanto ela fazia? Sem mexer, é nível 0 ou 1. Mexeu e pediu aprovação, nível 2. Mexeu sozinha e avisou, nível 3. Cuidou do processo todo e só chamou na exceção, nível 4.</p></div>
-  <div class="box"><p><b>O erro que ninguém percebe até estourar:</b> soltar tudo no nível 4 de cara. A IA erra devagar e em silêncio, e você só descobre quando o estrago já está feito. Por isso sobe-se um nível por vez, uma tarefa por vez.</p></div>
-  <p class="mut">Os extremos (0 e 4) vêm do vídeo "5 Níveis de Autonomia da IA que Quase Ninguém Usa". Os níveis 1 a 3 foram escritos neste kit para ficarem medíveis.</p>
+  <div class="box"><p><b>Em dúvida, pergunte três coisas:</b> a IA entrou? Não, é AL1. Quem fez o trabalho? Você, com a resposta dela, AL2; os dois, passo a passo, AL3; ela, e você conferiu antes de sair, AL4. Você estava lá? Não, rodou sozinha, AL5.</p></div>
+  <div class="box"><p><b>O erro que ninguém percebe até estourar:</b> soltar tudo no AL5 de cara. A IA erra devagar e em silêncio, e você só descobre quando o estrago já está feito. Por isso sobe-se um degrau por vez, uma tarefa por vez.</p></div>
+  <p class="mut">É a mesma escada do kit <a href="https://inematds.github.io/nivel-ia/guia/">nivel-ia</a> (em que degrau está o seu trabalho, em horas) e do <a href="https://inematds.github.io/relogio-2027/guia/">relogio-2027</a> (para onde a curva vai). Este kit mede a liberdade.</p>
+</div></section>
+
+<section id="gatilho"><div class="wrap">
+  <span class="chip">Pergunta frequente</span>
+  <h2>O AL5 pode ter gatilho de chamar humano?</h2>
+  <p class="sub">Pode, e precisa ter. "Sozinha" não é "sem dono".</p>
+  <div class="grid g3">
+    <div class="card"><h3>📏 Regra</h3><p>Escrita, curta: o que a IA pode fazer sozinha naquela tarefa e o que não pode.</p></div>
+    <div class="card"><h3>🧱 Teto</h3><p>Quantidade, valor e tempo máximos. Passou do teto, ela para.</p></div>
+    <div class="card"><h3>🔔 Alarme</h3><p>O gatilho que chama você quando a tarefa sai da regra: erro, número fora do normal, caso que ela nunca viu, algo crítico.</p></div>
+  </div>
+  <div class="box"><p><b>Fora da exceção, você só lê o resumo.</b> AL5 sem gatilho de chamar humano é o AL5 perigoso. Por isso o relatório do kit tem a seção <b>"AL5 que mexeu fora da máquina"</b>: as rotinas que rodaram sozinhas e publicaram, enviaram ou subiram algo. Cada linha dali precisa de regra, teto e alarme.</p></div>
 </div></section>
 
 <section id="medir"><div class="wrap">
@@ -187,15 +195,16 @@
   <h2>Você só sobe o que consegue ver</h2>
   <p class="sub">Sem registro, autonomia vira palpite. Com registro, você enxerga o que ainda faz na mão, o que a IA já faz sozinha e quais portas você abriu para ela.</p>
   <div class="grid g2">
-    <div class="card"><h3>📝 No papel</h3><p>Uma ficha de impressão. A cada tarefa que a IA fez: data, tarefa, nível de 0 a 4, que conexão usou (pasta, e-mail, agenda, site...) e se você precisou corrigir. Começa hoje, sem instalar nada, com qualquer IA.</p></div>
-    <div class="card"><h3>🤖 Automático</h3><p>Um programa lê os registros das suas sessões com o Claude Code, classifica cada uma de 0 a 4 e anota toda conexão usada. Roda sozinho todo dia e acumula o histórico.</p></div>
+    <div class="card"><h3>📝 No papel</h3><p>Uma ficha de impressão. Uma linha por tarefa, inclusive as que você faz sem IA (AL1): data, tarefa, degrau de AL1 a AL5, que conexão usou (pasta, e-mail, agenda, site...), se você precisou corrigir e, no AL5, se tem alarme. Começa hoje, sem instalar nada, com qualquer IA.</p></div>
+    <div class="card"><h3>🤖 Automático</h3><p>Um programa lê os registros das suas sessões com o Claude Code, põe cada uma num degrau (AL2 a AL5; o AL1 não tem IA e só aparece no papel), anota toda conexão usada e lista as rotinas AL5 que mexeram fora da máquina. Roda sozinho todo dia e acumula o histórico.</p></div>
   </div>
   <div class="box"><p><b>Papel e programa usam as mesmas colunas.</b> Você pode começar no papel e, quando quiser, passar para o automático sem perder o que já anotou.</p></div>
-  <h3 style="margin-top:2em">Quatro perguntas que a medição responde</h3>
+  <h3 style="margin-top:2em">Cinco perguntas que a medição responde</h3>
   <table class="t">
     <tr><th>Pergunta</th><th>Onde aparece</th></tr>
-    <tr><td>O que eu ainda faço na mão e a IA poderia fazer?</td><td>Tarefas repetidas 3 vezes ou mais nos níveis 0 a 2</td></tr>
-    <tr><td>O que a IA já faz sozinha e eu nem lembrava?</td><td>Rotinas sem ninguém na conversa, nos níveis 3 e 4</td></tr>
+    <tr><td>O que eu ainda faço na mão e a IA poderia fazer?</td><td>Tarefas repetidas 3 vezes ou mais em AL1 (só pela ficha) e AL2</td></tr>
+    <tr><td>O que a IA já faz sozinha e eu nem lembrava?</td><td>Rotinas sem ninguém na conversa, no AL5</td></tr>
+    <tr><td>Onde falta o gatilho de chamar humano?</td><td>"AL5 que mexeu fora da máquina": publicou, enviou ou subiu sozinha</td></tr>
     <tr><td>Quais portas eu abri para ela?</td><td>Lista de conexões, com a primeira e a última vez de uso</td></tr>
     <tr><td>Onde ela errou depois que eu soltei?</td><td>Coluna "precisou corrigir" da ficha</td></tr>
   </table>
@@ -203,16 +212,16 @@
 
 <section id="resultado"><div class="wrap">
   <span class="chip">O que a medição mostrou</span>
-  <h2>Um caso real: 14 dias de trabalho de uma pessoa só</h2>
-  <p class="sub">Medição automática dos registros do Claude Code do autor deste kit, de 29 de outubro a 12 de novembro de 2026. Só números agregados (arquivo <a href="https://github.com/inematds/niveis-autonomia/blob/main/exemplo/relatorio-agregado-2026-11-12.json"><code>exemplo/relatorio-agregado-2026-11-12.json</code></a>); nenhum conteúdo foi publicado.</p>
+  <h2>Um caso real: 30 dias de trabalho de uma pessoa só</h2>
+  <p class="sub">Medição automática dos registros do Claude Code do autor deste kit, de 13 de outubro a 12 de novembro de 2026, já na escada AL1–AL5. Só números agregados (arquivo <a href="https://github.com/inematds/niveis-autonomia/blob/main/exemplo/relatorio-agregado-2026-11-12.json"><code>exemplo/relatorio-agregado-2026-11-12.json</code></a>); nenhum conteúdo foi publicado.</p>
   <div class="grid g3">
-    <div class="card"><div class="big">2.453</div><p>sessões registradas em 14 dias.</p></div>
-    <div class="card"><div class="big">171</div><p>com a pessoa na conversa (terminal ou Telegram). Dessas, 71% ficaram no nível 3 e 25% no nível 2.</p></div>
-    <div class="card"><div class="big">2.282</div><p>rodaram sem ninguém digitando: são rotinas automáticas, que disparam num horário e seguem sozinhas. 12% chegaram ao nível 4 e responderam por 40% de tudo que a IA alterou (arquivos, comandos, envios).</p></div>
+    <div class="card"><div class="big">9.606</div><p>sessões registradas em 30 dias, com mais de 117 mil ações da IA (comandos, edições, leituras).</p></div>
+    <div class="card"><div class="big">506</div><p>conversas com a pessoa (terminal ou Telegram). 45% no AL3 (colabora) e 40% no AL4 (conduz, ele revisa). Em 480 delas a IA tinha liberdade total, sem pedir aprovação a cada passo.</p></div>
+    <div class="card"><div class="big">8.783</div><p>rodaram sozinhas, no AL5: rotinas com horário, que disparam e seguem sem ninguém digitando. <b>472</b> delas mexeram fora da máquina (publicaram, enviaram, subiram). É ali que o gatilho de chamar humano precisa existir.</p></div>
   </div>
-  <div class="box"><p><b>O que isso ensinou:</b> misturar as duas coisas engana. Na primeira conta, metade das sessões parecia "só consulta" (nível 0). Eram passos curtos de rotinas automáticas, em que a IA só respondeu. Separar "com você" de "sem você" mudou a leitura inteira.</p></div>
-  <div class="box"><p><b>Limite honesto:</b> o nível mostra quanta liberdade a IA teve, não se acertou. E o programa só enxerga o Claude Code.</p></div>
-  <div class="box"><p><b>Não se compare com estes números.</b> O autor é técnico e deixa muita coisa rodando sozinha. Quem está começando, como o dono de uma agência, deve ter a maior parte do uso nos níveis 1 e 2, e isso é o esperado: o ponto é medir o seu ponto de partida.</p></div>
+  <div class="box"><p><b>O que isso ensinou:</b> misturar as duas coisas engana. Separar "com você" de "sem você" mudou a leitura inteira: na conversa, ele quase sempre está junto (AL3) ou revisando (AL4); o AL5 é das rotinas.</p></div>
+  <div class="box"><p><b>Limite honesto:</b> o degrau mostra quanta liberdade a IA teve, não se acertou. E o programa só enxerga o Claude Code.</p></div>
+  <div class="box"><p><b>Não se compare com estes números.</b> O autor é técnico e deixa muita coisa rodando sozinha. Quem está começando, como o dono de uma agência, deve ter a maior parte do uso em AL2 e AL3, e isso é o esperado: o ponto é medir o seu ponto de partida.</p></div>
 </div></section>
 
 <section id="plano"><div class="wrap">
@@ -220,10 +229,10 @@
   <h2>Sua primeira semana</h2>
   <p class="sub">Cinco passos, sem instalar nada até o quarto.</p>
   <div class="step"><div class="b">1</div><div><h3>Imprima a ficha</h3><p>Abra <a href="https://inematds.github.io/niveis-autonomia/kit/ficha-papel.html"><code>kit/ficha-papel.html</code></a> e imprima em A4 deitado. Cole perto do computador.</p></div></div>
-  <div class="step"><div class="b">2</div><div><h3>Anote por 5 dias</h3><p>Uma linha por tarefa que a IA fez. Verbo mais objeto ("resumir contrato", "responder e-mail"). Marque o nível e a conexão.</p></div></div>
-  <div class="step"><div class="b">3</div><div><h3>Feche a sexta em 5 minutos</h3><p>Conte as linhas por nível. Tarefa repetida 3 vezes nos níveis 0 a 2 é candidata a subir. Tarefa nos níveis 3 ou 4 que você corrigiu mais de 1 vez em 10 desce um nível.</p></div></div>
+  <div class="step"><div class="b">2</div><div><h3>Anote por 5 dias</h3><p>Uma linha por tarefa, inclusive as que você faz sem IA (AL1). Verbo mais objeto ("resumir contrato", "responder e-mail"). Marque o degrau (AL1 a AL5), a conexão e se precisou corrigir (n, p ou g).</p></div></div>
+  <div class="step"><div class="b">3</div><div><h3>Feche a sexta em 5 minutos</h3><p>Conte as linhas por degrau. Sobe um degrau a tarefa que ficou chata de tão certa: AL2→AL3 com no máximo 1 correção grande em 10 vezes, AL3→AL4 com no máximo 2 em 20, AL4→AL5 com no máximo 2 em 50, sem erro grave e com alarme pronto. Desce um degrau com 1 erro grave ou 3 correções grandes em 10. Tarefa crítica (publicar, cliente, pagamento) para no AL4.</p></div></div>
   <div class="step"><div class="b">4</div><div><h3>Se usa Claude Code, ligue o registro automático</h3><p>Veja a parte técnica abaixo. Leva alguns minutos e passa a medir sozinho.</p></div></div>
-  <div class="step"><div class="b">5</div><div><h3>Suba uma tarefa, não todas</h3><p>Escolha a tarefa mais repetida e mais segura. Suba um nível. Meça de novo na semana seguinte.</p></div></div>
+  <div class="step"><div class="b">5</div><div><h3>Suba uma tarefa, não todas</h3><p>Escolha a tarefa mais repetida e mais segura. Suba um degrau. Se ela chegar ao AL5, crie antes o gatilho de chamar humano. Meça de novo na semana seguinte.</p></div></div>
 </div></section>
 
 <div id="tecnico" class="techhead"><div class="wrap">
@@ -249,20 +258,21 @@
   <div class="flow">
     <span>Logs das sessões</span><span class="arr">→</span>
     <span>Contar mensagens e ações</span><span class="arr">→</span>
-    <span>Ler o modo de permissão</span><span class="arr">→</span>
-    <span>Nível 0 a 4</span><span class="arr">→</span>
+    <span>Ações por mensagem sua</span><span class="arr">→</span>
+    <span>Degrau AL2 a AL5</span><span class="arr">→</span>
+    <span>AL5 fora da máquina?</span><span class="arr">→</span>
     <span>Registro + relatório</span>
   </div>
   <table class="t">
     <tr><th>Sinal no log</th><th>Como entra na regra</th></tr>
-    <tr><td>Nenhuma ferramenta usada</td><td>Nível 0</td></tr>
-    <tr><td>Só leitura (ler, buscar, listar)</td><td>Nível 1</td></tr>
-    <tr><td>Alterou algo e o modo pede aprovação</td><td>Nível 2</td></tr>
-    <tr><td>Alterou algo, sem pedir aprovação, várias ações por mensagem sua</td><td>Nível 3</td></tr>
-    <tr><td>No máximo 1 mensagem sua, 15 ou mais ações e pelo menos 1 efeito fora da máquina</td><td>Nível 4</td></tr>
-    <tr><td>Rodou sem terminal e sem você na conversa</td><td>Separado em "sem você" (rotinas)</td></tr>
+    <tr><td>Conversa sua com menos de 5 ações da IA por mensagem</td><td>AL2</td></tr>
+    <tr><td>5 a 14 ações da IA por mensagem sua</td><td>AL3</td></tr>
+    <tr><td>15 ou mais ações por mensagem sua, ou pedido seu feito pelo bot (Telegram)</td><td>AL4</td></tr>
+    <tr><td>Aberta por script, bot ou timer (<code>claude -p</code>) com até 2 mensagens humanas</td><td>AL5</td></tr>
+    <tr><td>AL5 que publicou, enviou ou subiu algo (git push, envio, MCP que escreve)</td><td>Lista "AL5 que mexeu fora da máquina"</td></tr>
+    <tr><td>Modo de permissão (pede aprovação ou não)</td><td>Coluna à parte: mostra quanta liberdade você deu</td></tr>
   </table>
-  <p class="mut">Os limites (15 ações, 3 ações por mensagem) ficam num único dicionário <code>LIM</code> no código, para você calibrar.</p>
+  <p class="mut">A regra é a mesma do kit nivel-ia, para os dois darem o mesmo degrau. Os limites (15 e 5 ações por mensagem, 3 mensagens para virar conversa) ficam num único dicionário <code>LIM</code> no código, para você calibrar.</p>
 </div></section>
 
 <section id="pre"><div class="wrap">
@@ -283,7 +293,7 @@
 <span class="k">cd</span> niveis-autonomia</pre></div></div>
   <div class="step"><div class="b">2</div><div><h3>Varra os registros</h3><p>A primeira vez lê os últimos 30 dias; as seguintes só leem o que mudou.</p>
 <pre><span class="k">python3</span> medir/autonomia.py varrer --desde $(date -d <span class="s">"-30 days"</span> +%F)  <span class="c"># últimos 30 dias</span></pre></div></div>
-  <div class="step"><div class="b">3</div><div><h3>Veja o relatório</h3><p>Distribuição por nível, separada em "com você" e "sem você", tarefas repetidas e conexões.</p>
+  <div class="step"><div class="b">3</div><div><h3>Veja o relatório</h3><p>Degraus por semana, separados em "com você" e "sem você", tarefas repetidas, AL5 que mexeu fora da máquina e conexões.</p>
 <pre><span class="k">python3</span> medir/autonomia.py relatorio</pre></div></div>
   <div class="step"><div class="b">4</div><div><h3>Liste as conexões</h3><p>Tudo que a IA tocou: ferramentas de linha de comando, servidores MCP, skills, agentes, sites.</p>
 <pre><span class="k">python3</span> medir/autonomia.py conexoes
@@ -292,7 +302,7 @@
 <pre><span class="k">sh</span> systemd/instalar.sh
 <span class="c"># para desligar:</span>
 <span class="k">systemctl</span> --user disable --now niveis-autonomia.timer</pre></div></div>
-  <div class="step"><div class="b">6</div><div><h3>Teste a regra</h3><p>14 testes cobrem os 5 níveis, o modo de permissão e a separação entre sessões com e sem pessoa.</p>
+  <div class="step"><div class="b">6</div><div><h3>Teste a regra</h3><p>15 testes cobrem os degraus AL2 a AL5, a mesma regra do nivel-ia, a lista de AL5 fora da máquina e a separação entre sessões com e sem pessoa.</p>
 <pre><span class="k">python3</span> -I -m unittest discover -s tests</pre></div></div>
   <div class="box"><p><b>Privacidade:</b> tudo roda na sua máquina, sem chamar API. O registro fica em <code>registro/</code>, fora do git, com contagens e uma etiqueta curta da tarefa. O inventário lista só nomes, nunca chaves nem endereços.</p></div>
 </div></section>
@@ -301,10 +311,12 @@
   <span class="chip">Limites</span>
   <h2>O que a medição não vê</h2>
   <ul class="mut" style="line-height:1.9">
+    <li>AL1: o que você faz sem IA não deixa registro. Só a ficha conta.</li>
+    <li>Se o alarme existe: o programa mostra onde o gatilho de chamar humano precisa existir; se ele existe, só você confere.</li>
     <li>Se você aprovou no prompt: só vê o modo de permissão da sessão.</li>
     <li>Chamada de API de dentro de um script: aparece como <code>bash:python3</code>, sem o nome do serviço.</li>
-    <li>Outras ferramentas além do Claude Code (por exemplo o Codex): não lê.</li>
-    <li>Qualidade: o nível mede liberdade, não acerto. Acerto é a coluna "precisou corrigir" da ficha.</li>
+    <li>Outras ferramentas além do Claude Code (por exemplo o Codex): não lê. O <a href="https://inematds.github.io/nivel-ia/guia/">nivel-ia</a> lê.</li>
+    <li>Qualidade: o degrau mede liberdade, não acerto. Acerto é a coluna "precisou corrigir" da ficha.</li>
   </ul>
 </div></section>
 
@@ -312,15 +324,15 @@
   <span class="chip">Roadmap</span>
   <h2>O que vem depois</h2>
   <div class="phase"><div class="tag">Agora</div><div class="d"><strong>Claude Code + ficha de papel</strong><span>Classificação por sessão, conexões, inventário, timer diário.</span></div></div>
-  <div class="phase"><div class="tag">Próximo</div><div class="d"><strong>Ler o Codex</strong><span>Mesma classificação para as sessões de outras ferramentas.</span></div></div>
-  <div class="phase"><div class="tag">Depois</div><div class="d"><strong>Regra de promoção automática</strong><span>Sugerir "suba esta tarefa" quando a taxa de acerto e o volume passarem do limite que você definir.</span></div></div>
+  <div class="phase"><div class="tag">Próximo</div><div class="d"><strong>Ler o Codex</strong><span>Mesma escada para as sessões de outras ferramentas (o nivel-ia já lê).</span></div></div>
+  <div class="phase"><div class="tag">Depois</div><div class="d"><strong>Regra de promoção automática</strong><span>Ler a ficha e dizer "pode subir" ou "desça" pelo critério de correções grandes, e conferir se cada AL5 fora da máquina tem alarme.</span></div></div>
 </div></section>
 </div>
 
 <footer>
   <div class="wrap">
     <div class="pill">Python</div><div class="pill">systemd</div><div class="pill">Claude Code</div>
-    <p style="margin-top:18px">Níveis de autonomia · kit aberto e gratuito ·
+    <p style="margin-top:18px">Níveis de autonomia AL1–AL5 · kit aberto e gratuito ·
       <a href="https://github.com/inematds/niveis-autonomia">inematds/niveis-autonomia</a> ·
       <a href="https://inema.club">INEMA.CLUB</a></p>
   </div>

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """niveis-autonomia: mede, nos logs das sessões de IA, quanto do trabalho é
-manual e quanto roda sozinho (níveis 0 a 4) e registra todas as conexões usadas.
+manual e quanto roda sozinho, na escada AL1 a AL5 (a mesma do kit nivel-ia e do relogio-2027),
+e registra todas as conexões usadas e o que a IA mexeu fora da máquina.
 
 Só lê arquivos locais (~/.claude/projects/**/*.jsonl). Não chama API, não envia nada.
 O registro fica em registro/ (fora do git): contagens e uma etiqueta curta da tarefa.
@@ -19,20 +20,21 @@ HOME = os.path.expanduser("~")
 RAIZ_PADRAO = os.path.join(HOME, ".claude", "projects")
 REG_PADRAO = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "registro")
 
+# A escada AL1–AL5 (igual ao kit nivel-ia). AL1 = você faz sozinho, sem IA: só aparece na ficha de papel.
 NIVEIS = {
-    0: "Consulta",
-    1: "Sugere",
-    2: "Faz com aprovação",
-    3: "Faz e avisa",
-    4: "Gerencia o processo",
+    "AL1": "Você faz sozinho",
+    "AL2": "A IA ajuda",
+    "AL3": "A IA colabora",
+    "AL4": "A IA conduz, você revisa",
+    "AL5": "A IA roda sozinha",
 }
+DEGRAUS = list(NIVEIS)
 
-# limites das regras (mude aqui, e só aqui, para calibrar)
+# limites das regras (mude aqui, e só aqui; são os mesmos do nivel-ia/medir/nivel.py)
 LIM = {
-    "n4_min_acoes": 15,      # ações que mudam algo para contar como processo inteiro
-    "n4_max_humano": 1,      # mensagens humanas no máximo
-    "n3_razao": 3.0,         # ações por mensagem humana acima disso = faz e avisa
-    "headless_n3_min": 1,    # sessão sem humano que agiu pelo menos isso = N3 (N4 se passar de n4_min_acoes)
+    "al4_por_msg": 15,       # ações da IA por mensagem sua: 15+ = AL4
+    "al3_por_msg": 5,        # 5 a 14 = AL3; menos = AL2
+    "conversa_min": 3,       # aberta por script/bot/timer com 3+ mensagens humanas = alguém conversando, não é AL5
 }
 
 LEITURA = {"Read", "Grep", "Glob", "WebSearch", "WebFetch", "ToolSearch", "TaskList",
@@ -123,23 +125,22 @@ def assinatura(texto):
     return " ".join(pal)
 
 
-def nivel_da_sessao(humano, leitura, escrita, externo, headless, modo=None):
-    """0 consulta · 1 sugere · 2 faz com aprovação · 3 faz e avisa · 4 gerencia o processo.
-    modo = permissionMode do log: default/plan/acceptEdits = o programa pede aprovação;
-    auto/bypassPermissions = não pede."""
-    acoes = escrita + externo
-    if leitura + acoes == 0:
-        return 0
-    if acoes == 0:
-        return 1
-    if humano <= LIM["n4_max_humano"] and acoes >= LIM["n4_min_acoes"] and externo >= 1:
-        return 4
-    if headless and humano <= LIM["n4_max_humano"]:
-        return 4 if acoes >= LIM["n4_min_acoes"] else 3
-    if not headless and modo in ("default", "plan", "acceptEdits"):
-        return 2
-    razao = acoes / max(humano, 1)
-    return 3 if razao > LIM["n3_razao"] else 2
+def nivel_da_sessao(humano, acoes, headless, via_bot=False):
+    """Degrau da sessão na escada AL2–AL5 (AL1 não tem IA, só existe na ficha).
+    AL5: aberta por script, bot ou timer (claude -p) com até 2 mensagens humanas, ou sem nenhuma.
+    AL4: pedido de uma pessoa pelo bot (Telegram): a IA conduz o pedido inteiro e a pessoa revisa.
+    Conversa no terminal: 15+ ações da IA por mensagem sua = AL4, 5 a 14 = AL3, menos = AL2."""
+    if via_bot:
+        return "AL4"
+    if (headless and humano < LIM["conversa_min"]) or humano == 0:
+        return "AL5"
+    k = acoes / max(humano, 1)
+    return "AL4" if k >= LIM["al4_por_msg"] else "AL3" if k >= LIM["al3_por_msg"] else "AL2"
+
+
+def num(nv):
+    """'AL4' -> 4 (para médias)"""
+    return int(str(nv)[2:]) if str(nv).startswith("AL") else 0
 
 
 def analisar(caminho):
@@ -235,13 +236,13 @@ def analisar(caminho):
     # modo mais restrito visto na sessão (se algum momento pediu aprovação, conta)
     ordem = ["default", "plan", "acceptEdits", "auto", "bypassPermissions"]
     modo = next((m for m in ordem if m in modos), None)
-    nv = nivel_da_sessao(humano, leitura, escrita, externo, headless, modo)
+    nv = nivel_da_sessao(humano, leitura + escrita + externo + delega, headless, telegram)
     return {
         "sid": sid, "tam": os.path.getsize(caminho), "ini": t0, "fim": t1,
         "projeto": os.path.basename(cwd) if cwd else None, "entrada": ent or "?",
         "pessoa": pessoa, "modo": modo, "humano": humano, "leitura": leitura, "escrita": escrita, "externo": externo,
         "delega": delega, "nivel": nv, "etiqueta": assinatura(primeira or ""),
-        "conexoes": dict(conex), "fonte": "claude",
+        "conexoes": dict(conex), "fonte": "claude", "via_bot": telegram,
     }
 
 
@@ -319,15 +320,15 @@ def bloco(sess):
     for r in sess:
         if r["escrita"] + r["externo"] > 0:
             g = grupos[(r.get("projeto") or "?", dominante(r))]
-            g["n"] += 1; g["nivel_soma"] += r["nivel"]; g["acoes"] += r["escrita"] + r["externo"]
-    rep = sorted(({"projeto": k[0], "conexao": k[1], "vezes": v["n"], "nivel_medio": round(v["nivel_soma"] / v["n"], 1),
+            g["n"] += 1; g["nivel_soma"] += num(r["nivel"]); g["acoes"] += r["escrita"] + r["externo"]
+    rep = sorted(({"projeto": k[0], "conexao": k[1], "vezes": v["n"], "nivel_medio": "AL%.1f" % (v["nivel_soma"] / v["n"]),
                    "acoes": v["acoes"]} for k, v in grupos.items() if v["n"] >= 3), key=lambda x: -x["vezes"])[:15]
     return {
         "sessoes": n,
-        "por_nivel": {str(k): por_nivel.get(k, 0) for k in range(5)},
-        "pct_sessoes": {str(k): round(100 * por_nivel.get(k, 0) / max(n, 1), 1) for k in range(5)},
-        "pct_acoes": {str(k): round(100 * acoes_nivel.get(k, 0) / tot, 1) for k in range(5)},
-        "semanas": {s: {str(k): c.get(k, 0) for k in range(5)} for s, c in sorted(por_sem.items())},
+        "por_nivel": {k: por_nivel.get(k, 0) for k in DEGRAUS},
+        "pct_sessoes": {k: round(100 * por_nivel.get(k, 0) / max(n, 1), 1) for k in DEGRAUS},
+        "pct_acoes": {k: round(100 * acoes_nivel.get(k, 0) / tot, 1) for k in DEGRAUS},
+        "semanas": {s: {k: c.get(k, 0) for k in DEGRAUS} for s, c in sorted(por_sem.items())},
         "tarefas_repetidas": rep,
     }
 
@@ -341,14 +342,22 @@ def montar(reg, desde):
         for k, v in r["conexoes"].items():
             c = conex[k]
             c["usos"] += v; c["sessoes"] += 1
-            c["nivel_max"] = max(c["nivel_max"], r["nivel"]); c["nivel_soma"] += r["nivel"]
+            c["nivel_max"] = max(c["nivel_max"], num(r["nivel"])); c["nivel_soma"] += num(r["nivel"])
             if not r.get("pessoa", True): c["sem_pessoa"] += 1
     modos = Counter(r.get("modo") or "?" for r in com)
     por_proj = defaultdict(Counter)
     for r in sess:
         por_proj[r.get("projeto") or "?"][r["nivel"]] += 1
+    # AL5 que mexeu fora da máquina (publicou, enviou, subiu): é onde o gatilho de chamar humano precisa existir
+    fora = defaultdict(lambda: {"vezes": 0, "efeitos": 0})
+    for r in sess:
+        if r["nivel"] == "AL5" and r["externo"] > 0:
+            f = fora[(r.get("projeto") or "?", dominante(r))]
+            f["vezes"] += 1; f["efeitos"] += r["externo"]
+    al5_fora = sorted(({"projeto": k[0], "conexao": k[1], **v} for k, v in fora.items()), key=lambda x: -x["vezes"])[:15]
     return {
         "sessoes": len(sess),
+        "al5_fora_da_maquina": al5_fora,
         "com_pessoa": bloco(com),
         "sem_pessoa": bloco(sem),
         "modo_de_permissao_com_pessoa": dict(modos),
@@ -358,33 +367,39 @@ def montar(reg, desde):
 
 
 def tabela(b):
-    print("| Nível | Sessões | % sessões | % das ações que mudam algo |\n|---|---|---|---|")
-    for k in range(5):
-        print(f"| {k} {NIVEIS[k]} | {b['por_nivel'][str(k)]} | {b['pct_sessoes'][str(k)]}% | {b['pct_acoes'][str(k)]}% |")
+    print("| Degrau | Sessões | % sessões | % das ações que mudam algo |\n|---|---|---|---|")
+    for k in DEGRAUS[1:]:
+        print(f"| {k} {NIVEIS[k]} | {b['por_nivel'][k]} | {b['pct_sessoes'][k]}% | {b['pct_acoes'][k]}% |")
 
 
 def cmd_relatorio(a):
     m = montar(a.registro, a.desde)
     if a.json:
         print(json.dumps(m, ensure_ascii=False, indent=2)); return
-    print(f"# Níveis de autonomia: {m['sessoes']} sessões" + (f" desde {a.desde}" if a.desde else ""))
+    print(f"# Níveis de autonomia (escada AL1–AL5): {m['sessoes']} sessões" + (f" desde {a.desde}" if a.desde else ""))
     for nome, chave in (("Com você na conversa (terminal ou Telegram)", "com_pessoa"), ("Sem ninguém na conversa (rotinas, timers, pipelines)", "sem_pessoa")):
         b = m[chave]
         print(f"\n## {nome}: {b['sessoes']} sessões\n")
         tabela(b)
-        print("\nPor semana (sessões por nível 0/1/2/3/4):")
+        print("\nPor semana (sessões em AL2/AL3/AL4/AL5):")
         for s, c in b["semanas"].items():
-            print(f"- {s}: " + " / ".join(str(c[str(k)]) for k in range(5)))
+            print(f"- {s}: " + " / ".join(str(c[k]) for k in DEGRAUS[1:]))
     print("\n## Modo de permissão nas sessões com você\n" + ", ".join(f"{k}: {v}" for k, v in sorted(m["modo_de_permissao_com_pessoa"].items(), key=lambda kv: -kv[1])))
     print("\n## Tarefas que você ainda faz com a IA, repetidas 3+ vezes (projeto + conexão principal)")
     for c in m["com_pessoa"]["tarefas_repetidas"]:
-        print(f"- {c['vezes']}x, nível médio {c['nivel_medio']}: {c['projeto']} via {c['conexao']}")
+        print(f"- {c['vezes']}x, degrau médio {c['nivel_medio']}: {c['projeto']} via {c['conexao']}")
     print("\n## Tarefas que já rodam sem você, repetidas 3+ vezes")
     for c in m["sem_pessoa"]["tarefas_repetidas"]:
-        print(f"- {c['vezes']}x, nível médio {c['nivel_medio']}: {c['projeto']} via {c['conexao']}")
+        print(f"- {c['vezes']}x, degrau médio {c['nivel_medio']}: {c['projeto']} via {c['conexao']}")
+    print("\n## AL5 que mexeu fora da máquina (publicou, enviou, subiu): confira o gatilho de chamar humano")
+    print("Rodou sozinha e teve efeito lá fora. Cada uma precisa de regra, teto e um alarme que chama você na exceção.")
+    for c in m["al5_fora_da_maquina"]:
+        print(f"- {c['vezes']}x ({c['efeitos']} efeitos fora): {c['projeto']} via {c['conexao']}")
+    if not m["al5_fora_da_maquina"]:
+        print("- nenhuma")
     print("\n## Conexões mais usadas")
     for c in m["conexoes"][:20]:
-        print(f"- {c['nome']}: {c['usos']} usos em {c['sessoes']} sessões ({c['sem_pessoa']} sem você), nível médio {c['nivel_soma']/c['sessoes']:.1f}, máximo {c['nivel_max']}")
+        print(f"- {c['nome']}: {c['usos']} usos em {c['sessoes']} sessões ({c['sem_pessoa']} sem você), degrau médio AL{c['nivel_soma']/c['sessoes']:.1f}, máximo AL{c['nivel_max']}")
     print("\nLimites: o nível vem de sinais do log (mensagens humanas, tipo de ação, modo de permissão, se rodou sem terminal). "
           "Só lê o Claude Code; Codex e chamadas de API feitas dentro de um script ficam fora.")
 
@@ -397,7 +412,7 @@ def cmd_conexoes(a):
     for tipo, lst in sorted(por_tipo.items()):
         print(f"\n## {tipo} ({len(lst)})")
         for c in lst[:30]:
-            print(f"- {c['nome'].split(':',1)[1]}: {c['usos']} usos, nível máx {c['nivel_max']}")
+            print(f"- {c['nome'].split(':',1)[1]}: {c['usos']} usos, degrau máx AL{c['nivel_max']}")
 
 
 def inventario_configurado():
