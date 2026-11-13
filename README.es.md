@@ -12,6 +12,8 @@ Kit para medir cuánta libertad le diste a la IA en cada tarea, en la escala **A
 
 Guía completa (página de presentación + paso a paso): **https://inematds.github.io/niveis-autonomia/guia/es/**
 
+🎬 Video: https://www.youtube.com/watch?v=IBnQDJF2eXw
+
 ## La escala AL1 a AL5
 
 | Nivel | Nombre | La IA hace | Tú haces |

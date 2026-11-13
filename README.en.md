@@ -12,6 +12,8 @@ A kit for measuring how much freedom you gave AI for each task, on the **AL1 to 
 
 Complete guide (landing page + step-by-step): **https://inematds.github.io/niveis-autonomia/guia/en/**
 
+🎬 Video: https://www.youtube.com/watch?v=IBnQDJF2eXw
+
 ## The AL1 to AL5 scale
 
 | Level | Name | AI does | You do |

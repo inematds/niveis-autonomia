@@ -12,6 +12,8 @@ Kit para medir quanta liberdade você deu à IA em cada tarefa, na escada **AL1 
 
 Guia completo (landing + passo a passo): **https://inematds.github.io/niveis-autonomia/guia/**
 
+🎬 Vídeo: https://www.youtube.com/watch?v=IBnQDJF2eXw
+
 ## A escada AL1 a AL5
 
 | Degrau | Nome | A IA faz | Você faz |
